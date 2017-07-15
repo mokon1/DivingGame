@@ -1,0 +1,334 @@
+body{
+    background-color: lightblue;
+}
+
+#startScreen, #instructionScreen, #gameScreen, #endScreen{
+    width: 80vw;
+    height: 80vh;
+    margin: 0 auto;
+    font-size: 0;
+} 
+
+
+/* START SCREEN */
+#startScreen{
+    border: 2px solid yellow;
+    position: relative;
+    background-image: url('../pic/fishes/background-17520_1920.jpg');
+    background-repeat: no-repeat;
+    background-size:cover; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+a:link{
+    text-decoration: none;
+}
+a:visited{
+    color: black;
+}
+a:hover{
+    color: white;
+}
+
+.button{
+    width: 200px;
+    //height: 80px;
+    margin-top: 20px;
+    border: 2px solid white;
+    background-color: lightblue;
+    opacity: 0.5;
+    cursor: pointer;
+    p{
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+/* brak w html?/
+.volume{
+    border: 1px solid green;
+    width: 80%;
+    height: 20px;
+}
+*/
+
+/* INSTRUCTION */
+#instructionScreen{
+    margin: 0 auto;
+    border: 2px solid yellow;
+    position: relative;
+    background-image: url('../pic/fishes/background-17520_1920.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;  
+    align-items: center;
+    flex-direction: column;
+   // display: none;
+    .instruction{
+        width: 40vw;
+        margin-top: 10vh;
+    }
+    .instructionText{
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+.endGameBtn{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+/*.buttons{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}*/
+
+// do zrobienia instrukcja:
+.direction{
+    margin-left: 20px;
+    .left, .right, .up, .down{
+        display: inline-block;
+        margin-left: 20px;
+       //width: 30px;
+       //height: 30px;
+       // border: 1px solid red;
+        //display: inline-block;
+        background-color: black;
+        vertical-align: top;
+        text-align: center;
+        p.smallText{
+            color: white;
+            font-size: 12px;
+        }
+    }
+}
+.arrowLeft{
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid white;
+}
+.arrowRight{
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid white;
+}
+.arrowUp{
+    width: 0;
+    height: 0;
+    border-top: 20px solid white;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+}
+.arrowDown{
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid white;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+}
+
+
+/* GAME */
+#gameScreen{
+    //display: none;
+    width: 100vw;
+    margin: 0 auto;
+    border: 2px solid yellow;
+    position: relative;
+    background-image: url('../pic/fishes/background-17520_1920.jpg');
+    background-repeat: no-repeat;
+    background-size:cover; 
+    overflow: hidden;
+}
+
+#information{
+    width: 80vw;
+    height: 15vh;
+    margin: 0 auto;
+   // display: none;
+}
+.blackAndWhite{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+
+    animation: fish-blackAndWhite 85s;
+    //-moz-animation: fish-blackAndWhite 85s;
+    //-webkit-animation: fish-blackAndWhite 85s;
+}
+
+.brownAndRed{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    z-index: 11;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+
+    animation: fish-brownAndRed 35s;
+   // -moz-animation: fish-brownAndRed 35s;
+   // -webkit-animation: fish-brownAndRed 35s;
+}
+
+.blueAndRed{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    z-index: 12;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+
+    animation: fish-blueAndRed 60s;
+   // -moz-animation: fish-blueAndRed 60s;
+   /// -webkit-animation: fish-blueAndRed 60s;
+}
+
+
+.fishes{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    z-index: 11;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+    top: 500px;
+    
+    animation: fish-fishes 60s;
+    //-moz-animation: fish-fishes 60s;
+    //-webkit-animation: fish-fishes 60s;
+}
+
+
+.character{
+    height: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 350px;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+}
+.character2{
+    height: 100px;
+    position: absolute;
+    z-index: 10;
+    top: 10px;
+    left: 200px;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+     animation: changePositionCharacter2 85s 5s infinite;
+    // dodać wsparcie przeglądarek!!!
+   /// -moz-animation: changePositionCharacter2 85s 5s infinite;
+    //-webkit-animation: changePositionCharacter2 85s 5s infinite;
+    
+}
+
+.character3{
+    height: 100px;
+    position: absolute;
+    z-index: 10;
+    bottom: 100px;
+    left: 300px;
+    img{
+        height: 100%;
+        width: 100%;
+    }
+     animation: changePositionCharacter3 85s infinite;
+    //dodać wsparcie przeglądarek!!!
+   /// -moz-animation: changePositionCharacter3 85s infinite;
+    //-webkit-animation: changePositionCharacter3 85s infinite;
+    
+}
+
+.item{
+    position: relative;
+}
+.silverCoin{
+    width: 30px;
+    height: 30px;
+    background-color: silver;
+    border-radius: 50%;
+    //transform: skew(10deg);
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+}
+.goldCoin{
+    width: 30px;
+    height: 30px;
+    background-color: gold;
+    border-radius: 50%;
+    //transform: skew(10deg);
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+}
+.smallButton{
+    width: auto;
+    height: auto;
+    margin: 0;
+    border: 2px solid white;
+    background-color: lightblue;
+    opacity: 0.5;
+    cursor: pointer;
+    right: 20px;
+    p{
+        font-size: 20px;
+        border: 2px solid white;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+
+/* END SCREEN */
+#endScreen{
+    //display: none;
+    background-image: url('../pic/fishes/background-17520_1920.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    position: relative;
+    div{
+        text-align: center;
+    }
+    p, span{
+        font-size: 22px;
+        color: black;
+    }
+}
+
+.tableScore{
+    list-style: none;
+    li{
+       font-size: 20px;
+        font-weight: bold;
+    }
+    //position: absolute;
+}
+h3{
+    color: black;
+    font-size: 25px;
+}
+
+
+
+

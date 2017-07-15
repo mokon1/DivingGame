@@ -1,0 +1,78 @@
+/* ... */
+
+@keyframes fish-blackAndWhite{
+    0%{
+        transform: translate(1800px, 10px);
+    }
+    30%{
+        transform: translate(1000px, 40px) rotate(-10deg);
+    }
+    60%{
+        transform: translate(600px, 90px) rotate(-40deg);
+    }
+    100%{
+        transform: translate(-100px, 520px);
+    }
+}
+
+
+@keyframes fish-brownAndRed{
+    0%{
+        transform: translate(0px, 50px);
+    }
+    30%{
+        transform: translate(300px, 300px) scale(2);
+    }
+    100%{
+        transform: translate(1600px, 900px) scale(1);
+    }
+}
+
+
+@keyframes fish-blueAndRed{
+
+    20%{
+        transform: translate(0px, 20px);
+    }
+    70%{
+        transform: translate(800px, 600px);
+    }
+    100%{
+        transform: translate(1600px, 900px);
+    }
+}
+
+
+@keyframes fish-fishes{
+
+    0%{
+        transform: translate(0px, -100px);
+    }
+    30%{
+        transform: translate(300px, -300px) scale(1.5);
+    }
+    100%{
+        transform: translate(0px, 0px) scale(1);
+    }
+}
+
+
+@keyframes changePositionCharacter2{
+    0%{
+        transform: translate(200px, 10px);
+    }
+    100%{
+        transform: translate(2000px, 520px);
+    }
+}
+
+
+@keyframes changePositionCharacter3 85s infinite{
+    0%{
+        transform: translate(100px, 0px);
+    }
+    100%{
+        transform: translate(1500px, 50px);
+    }
+}
+
