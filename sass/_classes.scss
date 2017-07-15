@@ -1,14 +1,23 @@
 /* classes used in script.js - not used in index.html */
 
 .finalCounting{
-    
+    color: red;
+    font-size: 32px;
+    animation: finalCounting 1s 5s infinite;
+    // -moz-animation:
+    //-webkit-animation:
 }
+
 .moveToLeft{
-    
+    animation: moveToLeft 10s forwards;
+    // -moz-animation: 
+    //-webkit-animation: 
 }
+
 .moveToBottom{
-    
+    animation: moveToBottom 10s forwards;
 }
+
 .hidden{
     
 }

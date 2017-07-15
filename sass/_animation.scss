@@ -76,3 +76,23 @@
     }
 }
 
+@keyframes finalCounting{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes moveToLeft{
+    100%{
+        transform: translateX(-500px) translateY(-50px);
+    }
+}
+@keyframes moveToBottom{
+    100%{
+        transform: translateY(80px);
+    }
+}
+
+
