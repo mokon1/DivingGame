@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> GAME </title>
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <meta name="viewport" content="width=device-width initial-scale=1">
+    <!--<script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>-->
+    <script src="jquery-3.2.1.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <audio class="music" loop>
+        <source src="audio/start.mp3" class="music" loop/>
+    </audio>
+    <audio class="ocean" loop>
+        <source src="audio/ocean.wav"/>
+    </audio>
+    <audio class="coins" loop>
+        <source src="audio/coins.mp3" class/>
+    </audio>
+    <audio class="end" loop>
+        <source src="audio/end.wav" class="ocean" loop="loop"/>
+    </audio>
+    
+    <!-- START SCREEN -->
+    <section id="startScreen" class="screen">
+        <div class="startBtn button">
+            <p>START</p>
+        </div>
+        <div class="instructionBtn button">
+            <p>INSTRUCTIONS</p>
+        </div>
+        <div class="exitBtn button">
+            <p><a href="https://www.github.com/mokon1">EXIT</a></p>
+        </div>
+        <div class="musicBtn button">
+            <p>SOUND OFF</p>
+        </div>
+        <!--czy potrzebne?
+            <div class="button">
+            <p>
+                <span class="plus"> + </span><span class="volume"></span><span class="minus"> - </span>
+            </p>
+        </div>-->
+        <div class="tableScoresBtn button"> <!-- zmiana z tableScoreBtn - poprawić w sass,js-->
+            <p> SCORE </p>
+        </div>
+    </section>
+    
+    <!-- INSTRUCTION SCREEN -->
+    <section id="instructionScreen">
+        <div class="instruction">
+            <p class="instructionText">
+                Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.
+            </p>
+            <div class="direction">
+                <div class="left">
+                    <div class="arrowLeft"></div>
+                </div>
+                <div class="right">
+                    <div class="arrowRight"></div>
+                </div>
+                <div class="up">
+                    <div class="arrowUp"></div>
+                </div>
+                <div class="down">
+                    <div class="arrowDown"></div>
+                </div>
+            </div>
+        </div>
+        <div class="endGameBtn button">
+            <p>EXIT</p>
+        </div>
+    </section>
+    
+    <!-- GAME SCREEN -->
+    <section id="gameScreen">
+        <div class="blackAndWhite"><img src="pictures/clown-fish.png"/></div>
+        <div class="brownAndRed"><img src="pictures/brownAndRed.gif"/></div>
+        <div class="blueAndRed"><img src="pictures/blueAndRed.gif"/></div>
+        <div class="fishes"><img src="pictures/fishes.gif"/></div>
+           
+        <div class="character"><img src="pic/nurek.gif"/></div>
+        <div class="item character2"><img src="pic/nurek.gif"/></div>
+        <div class="item character3"><img src="pic/nurek.gif"/></div>
+        
+        <div class="item silverCoin"></div>
+        <div class="item silverCoin"></div>
+        <div class="item silverCoin"></div>
+        <div class="item silverCoin"></div>
+        <div class="item silverCoin"></div>
+        <div class="item silverCoin"></div>
+        <div class="item goldCoin"></div>
+        <div class="item goldCoin"></div>
+        <div class="item goldCoin"></div>
+        <div class="item goldCoin"></div>
+
+    
+        <div class="endGameBtn"> <!--  smallButton rightPosition ? -->
+            <p class="smallButton ">EXIT</p>
+        </div>
+    </section> 
+    
+    <section id="information">
+        <h2>Pozostało: <span id="time"></span> sekund</h2>
+        <h3>Wynik: <span id="result"></span> </h3>
+    </section>
+    
+    <!-- END GAME -->
+    <section id="endScreen">
+        <div class="score">
+            <p>
+                KONIEC GRY<br/> Twój wynik to: <span class="resultShow"></span>
+            </p>
+        </div>
+        
+        <form class="addScore">
+            <label> Imię:
+                <input type="text" value="name" class="getName">
+            </label>
+                Twój wynik:<input type="text" readonly class="getScore">
+            <label>
+                <input type="submit" id="addScoreBtn" value="Zapisz wynik">
+            </label>
+        </form>
+    
+        <ul class="tableScore">
+            <li> Najlepsze wyniki:</li>
+        </ul>
+ 
+        <div class="endGameBtn">  <!--  smallButton rightPosition ? -->
+            <p class="smallButton ">EXIT</p>
+        </div>
+    </section>
+    
+   <!-- czy porzebne??<div class="scene">
+    <div class="element" data-x="300" data-y="100" data-speed="0.1" data-z="1"></div>
+    <div class="element" data-x="350" data-y="150" data-speed="0.2" data-z="2"></div>
+    <div class="element" data-x="500" data-y="300" data-speed="0.3" data-z="3"></div>
+</div>-->
+
+</body>
+</html>
