@@ -72,7 +72,7 @@ $(function(){
     var time = $('#time');
     var character = $('.character');
     var notice = $('#result');
-    var timeCounter = 5;
+    var timeCounter = 15;
     var heightScreen = gameScreen.height();
     var widthScreen = gameScreen.width();
     var heightCharacter = character.height();
@@ -81,15 +81,19 @@ $(function(){
     // START NEW GAME !!!
     function startNewGame(){
         score = 0;
-        timeCounter = 5; //zmienić na 90
+        timeCounter = 15; //zmienić na 90
         startPosition();
         functionSetInterval();
     }    
      
        /* TIME COUNTER    //ok*/
-    function functionSetInterval(){
+    function functionSetInterval(){        
         
         var interval = setInterval(function(){
+            
+            console.log(character.position().left);
+        console.log(widthScreen);
+            
             timeCounter--;
             if(timeCounter === 10){
                 time.addClass('finalCounting');
@@ -130,7 +134,7 @@ $(function(){
                     'top': '0' +'px'
                 });
             }
-            if (character.position().top + heightCharacter > heightScreen-heightCharacter) {
+            if (character.position().top > heightScreen) {
                character.animate({
                     'top': heightScreen-heightCharacter
                 });
@@ -140,13 +144,9 @@ $(function(){
                     'left': '0' +'px'
                 });
             } 
-            //DOKOŃCZYĆ PRAWA STRONE
-               // console.log(character.position().top);
-            //console.log(heightScreen);
-            //console.log(character.height());
-            if (character.position().left+widthCharacter > widthScreen-widthCharacter) {
+            if (character.position().left + widthCharacter > widthScreen+50) {
                character.animate({
-                    'left': widthScreen-widthCharacter
+                    'left': '60vw'
                 });
             } 
         },1000);
