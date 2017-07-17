@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title> GAME </title>
-    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css" type="text/css"> <!-- ZMIANA NAZWY PLIKU!!! -->
     <meta name="viewport" content="width=device-width initial-scale=1">
     <!--<script
     src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -46,7 +46,7 @@
                 <span class="plus"> + </span><span class="volume"></span><span class="minus"> - </span>
             </p>
         </div>-->
-        <div class="tableScoresBtn button"> <!-- zmiana z tableScoreBtn - poprawić w sass,js-->
+        <div class="tableScoresBtn button">
             <p> SCORE </p>
         </div>
     </section>
@@ -85,8 +85,11 @@
         <div class="fishes"><img src="pictures/fishes.gif"/></div>
            
         <div class="character"><img src="pic/nurek.gif"/></div>
+        
+        
+        <!--POPRAWIĆ INNE ELEMENTY
         <div class="item character2"><img src="pic/nurek.gif"/></div>
-        <div class="item character3"><img src="pic/nurek.gif"/></div>
+        <div class="item character3"><img src="pic/nurek.gif"/></div> -->
         
         <div class="item silverCoin"></div>
         <div class="item silverCoin"></div>
@@ -114,22 +117,24 @@
     <section id="endScreen">
         <div class="score">
             <p>
-                KONIEC GRY<br/> Twój wynik to: <span class="resultShow"></span>
+               <b> KONIEC GRY<br/> Twój wynik to: <span class="showResult"></span></b>
             </p>
         </div>
         
         <form class="addScore">
             <label> Imię:
-                <input type="text" value="name" class="getName">
+                <input type="text" class="getName">
             </label>
-                Twój wynik:<input type="text" readonly class="getScore">
+            <label> 
+            Wynik: <span class="showResult2"></span>
+            </label>
+                
             <label>
-                <input type="submit" id="addScoreBtn" value="Zapisz wynik">
+                <input type="submit" id="addScoreBtn" class="smallButton" value="Zapisz wynik">
             </label>
         </form>
-    
-        <ul class="tableScore">
-            <li> Najlepsze wyniki:</li>
+        <h2>Najlepsze wyniki:</h2>
+        <ul class="tableScores">
         </ul>
  
         <div class="endGameBtn">  <!--  smallButton rightPosition ? -->

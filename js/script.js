@@ -177,33 +177,33 @@ $(function(){
     }
     
     
-/* COINS, CHARACTER POSITION */
-var coins = $('.item');
-var minDistance = 100; 
-var maxDistanceTop = $('#gameScreen').height()-100;     //coinsy muszą spadać
-var maxDistanceLeft = $('#gameScreen').width()+400;     //coinsy musza sie ruszac
-    
-    
-function startPosition() {
-    character.css('top','350px').css('left','10px');
-    coins.each(function(){
-        left2 = ((Math.random() * (maxDistanceLeft-minDistance))+minDistance).toFixed();
-        top2 = ((Math.random()*(maxDistanceTop-minDistance))+minDistance).toFixed();
-        //console.log($('#gameScreen').height());
-        $(this).css({
-            'left': left2+'px',
-            'top':  top2+'px',
-            'display': 'block'
-        },500);
-                     
-        if(left2>$('#gameScreen').width()-50){
-            $(this).addClass('moveToLeft');
-        }   
-        if(top2<200){
-            $(this).addClass('moveToBottom');
-        }
-    });
-}
+    /* COINS, CHARACTER POSITION */
+    var coins = $('.item');
+    var minDistance = 100; 
+    var maxDistanceTop = $('#gameScreen').height()-100;     //coinsy muszą spadać
+    var maxDistanceLeft = $('#gameScreen').width()+400;     //coinsy musza sie ruszac
+
+
+    function startPosition() {
+        character.css('top','350px').css('left','10px');
+        coins.each(function(){
+            left2 = ((Math.random() * (maxDistanceLeft-minDistance))+minDistance).toFixed();
+            top2 = ((Math.random()*(maxDistanceTop-minDistance))+minDistance).toFixed();
+            //console.log($('#gameScreen').height());
+            $(this).css({
+                'left': left2+'px',
+                'top':  top2+'px',
+                'display': 'block'
+            },500);
+
+            if(left2>$('#gameScreen').width()-50){
+                $(this).addClass('moveToLeft');
+            }   
+            if(top2<200){
+                $(this).addClass('moveToBottom');
+            }
+        });
+    }
     
   
     /* MOVEMENT */
@@ -248,5 +248,72 @@ function startPosition() {
               }
         }
     });
+    
+    
+        /* AJAX */
+    var tableScores = $('.tableScores'); //ul
+    var scoreUrl = 'http://localhost:3000/game/';
+    
+    function loadScore(){
+       tableScores.text("");
+       $.ajax({
+           url: scoreUrl,   
+           type: "GET"
+           }).done(function(response){
+             response.sort(function (a, b) {
+                return b.score - a.score;
+            });
+           
+            renderScores(response);
+           }).fail(function(error){
+           console.log(error);
+       })
+    }
+    loadScore();
+    
+   function renderScores(givenResponse){
+       for(var i=0;i<3;i++){            
+            var value = givenResponse[i];       //!!!! 
+           var oneScore = $("<li>", {class: "oneScore"}).attr('data-id',value.id);
+            var name= $("<p>");
+            name.text(value.name);
+            var result = $("<p>");
+            result.text(value.score);
+  
+            oneScore.append(name).append(result);
+            tableScores.append(oneScore);    
+       }
+    }
+    
+    function addResult(){
+        var addScoreBtn = $('#addScoreBtn');
+        //console.log(submitBtn);
+        
+        addScoreBtn.on('click',function(event){
+            event.preventDefault();
+
+            var getName = $('.getName').val();
+            var getResult = $('.showResult2').text();
+            
+            var jsonData = {  
+               "name": getName,
+               "score": getResult
+            }
+                      
+                
+            $.ajax({
+                url: scoreUrl,
+                type: "POST",
+                data: JSON.stringify(jsonData),
+                contentType: 'application/json; charset=UTF-8' //wymagane w json-server - przy samym dataType: "json" - nie odczytuje 
+            }).done(function(response){
+                loadScore();
+                console.log("od nowa");
+            }).fail(function(error){
+                console.log(error); 
+            });
+        });
+    }
+    addResult();
     
 });
