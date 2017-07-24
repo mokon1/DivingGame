@@ -3,19 +3,15 @@
 .finalCounting{
     color: red;
     font-size: 32px;
-    animation: finalCounting 1s 5s infinite;
-    // -moz-animation:
-    //-webkit-animation:
+    @include addOtherWebsites(finalCounting 1s 5s infinite);
 }
 
 .moveToLeft{
-    animation: moveToLeft 10s forwards;
-    // -moz-animation: 
-    //-webkit-animation: 
+    @include addOtherWebsites(moveToLeft 10s forwards);
 }
 
 .moveToBottom{
-    animation: moveToBottom 10s forwards;
+    @include addOtherWebsites(moveToBottom 10s forwards);
 }
 
 .hidden{

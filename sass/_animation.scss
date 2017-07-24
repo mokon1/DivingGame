@@ -1,4 +1,4 @@
-/* ... */
+/* Animation created in SASS */
 
 @keyframes fish-blackAndWhite{
     0%{
@@ -57,42 +57,138 @@
 }
 
 
-@keyframes changePositionCharacter2{
+/*@keyframes changePositionCharacter2{
     0%{
         transform: translate(200px, 10px);
     }
     100%{
         transform: translate(2000px, 520px);
     }
+}*/
+
+
+@keyframes changePositionCharacter2{
+   @include changePositionCharacter2;
+}
+@-webkit-keyframes changePositionCharacter2{
+    @include changePositionCharacter2;
+}
+@-moz-keyframes changePositionCharacter2{
+    @include changePositionCharacter2;
+}
+@-o-keyframes changePositionCharacter2{
+    @include changePositionCharacter2;
 }
 
 
-@keyframes changePositionCharacter3 85s infinite{
+
+
+@keyframes changePositionCharacter3{
+   @include changePositionCharacter3;
+}
+@-webkit-keyframes changePositionCharacter3{
+    @include changePositionCharacter3;
+}
+@-moz-keyframes changePositionCharacter3{
+    @include changePositionCharacter3;
+}
+@-o-keyframes changePositionCharacter3{
+    @include changePositionCharacter3;
+}
+
+
+/*@keyframes changePositionCharacter3{
     0%{
         transform: translate(100px, 0px);
     }
     100%{
         transform: translate(1500px, 50px);
     }
-}
+}*/
+
+
 
 @keyframes finalCounting{
+   @include finalCounting;
+}
+@-webkit-keyframes finalCounting{
+    @include finalCounting;
+}
+@-moz-keyframes finalCounting{
+    @include finalCounting;
+}
+@-o-keyframes finalCounting{
+    @include finalCounting;
+}
+
+
+/*@keyframes finalCounting{
     0%{
         opacity: 0;
     }
     100%{
         opacity: 1;
     }
-}
-@keyframes moveToLeft{
+}*/
+
+/*@keyframes moveToLeft{
     100%{
         transform: translateX(-500px) translateY(-50px);
     }
+}*/
+
+
+@keyframes moveToLeft{
+   @include moveToLeft;
 }
+@-webkit-keyframes moveToLeft{
+    @include moveToLeft;
+}
+@-moz-keyframes moveToLeft{
+    @include moveToLeft;
+}
+@-o-keyframes moveToLeft{
+    @include moveToLeft;
+}
+
+
+
+/*
 @keyframes moveToBottom{
     100%{
         transform: translateY(80px);
     }
 }
+@-webkit-keyframes moveToBottom{
+    100%{
+        transform: translateY(80px);
+    }
+}
+@-moz-keyframes moveToBottom{
+    100%{
+        transform: translateY(80px);
+    }
+}
+@-o-keyframes moveToBottom{
+    100%{
+        transform: translateY(80px);
+    }
+}
+*/
+
+
+@keyframes moveToBottom{
+   @include moveToBottom;
+}
+@-webkit-keyframes moveToBottom{
+    @include moveToBottom;
+}
+@-moz-keyframes moveToBottom{
+    @include moveToBottom;
+}
+@-o-keyframes moveToBottom{
+    @include moveToBottom;
+}
+
 
 

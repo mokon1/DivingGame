@@ -1,0 +1,51 @@
+@mixin addOtherWebsites($animation){
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    -o-animation: $animation;
+    animation: $animation;
+}
+///
+
+@mixin changePositionCharacter2{
+    0%{
+        transform: translate(200px, 10px);
+    }
+    100%{
+        transform: translate(2000px, 520px);
+    }
+}
+
+
+@mixin changePositionCharacter3{
+    0%{
+        transform: translate(100px, 0px);
+    }
+    100%{
+        transform: translate(1500px, 50px);
+    }
+}
+
+
+
+
+@mixin finalCounting{
+     0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+   
+@mixin moveToLeft{
+     100%{
+        transform: translateX(-500px) translateY(-50px);
+    }
+}
+@mixin moveToBottom{
+     100%{
+        transform: translateY(80px);
+    }
+}
+
+

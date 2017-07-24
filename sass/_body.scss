@@ -9,7 +9,6 @@ body{
     //font-size: 0;
 } 
 
-
 /* START SCREEN */
 #startScreen{
     border: 2px solid yellow;
@@ -161,10 +160,8 @@ a:hover{
         height: 100%;
         width: 100%;
     }
-
-    animation: fish-blackAndWhite 85s;
-    //-moz-animation: fish-blackAndWhite 85s;
-    //-webkit-animation: fish-blackAndWhite 85s;
+    @include addOtherWebsites('fish-blackAndWhite 85s');
+    
 }
 
 .brownAndRed{
@@ -176,10 +173,7 @@ a:hover{
         height: 100%;
         width: 100%;
     }
-
-    animation: fish-brownAndRed 35s;
-   // -moz-animation: fish-brownAndRed 35s;
-   // -webkit-animation: fish-brownAndRed 35s;
+   @include addOtherWebsites(fish-brownAndRed 35s);
 }
 
 .blueAndRed{
@@ -191,10 +185,7 @@ a:hover{
         height: 100%;
         width: 100%;
     }
-
-    animation: fish-blueAndRed 60s;
-   // -moz-animation: fish-blueAndRed 60s;
-   /// -webkit-animation: fish-blueAndRed 60s;
+    @include addOtherWebsites(fish-blueAndRed 60s);
 }
 
 
@@ -209,9 +200,7 @@ a:hover{
     }
     top: 500px;
     
-    animation: fish-fishes 60s;
-    //-moz-animation: fish-fishes 60s;
-    //-webkit-animation: fish-fishes 60s;
+    @include addOtherWebsites(fish-fishes 60s);
 }
 
 
@@ -236,10 +225,7 @@ a:hover{
         height: 100%;
         width: 100%;
     }
-     animation: changePositionCharacter2 85s 5s infinite;
-    // dodać wsparcie przeglądarek!!!
-   /// -moz-animation: changePositionCharacter2 85s 5s infinite;
-    //-webkit-animation: changePositionCharacter2 85s 5s infinite;
+     @include addOtherWebsites(changePositionCharacter2 85s 5s infinite);
     
 }
 
@@ -253,10 +239,7 @@ a:hover{
         height: 100%;
         width: 100%;
     }
-     animation: changePositionCharacter3 85s infinite;
-    //dodać wsparcie przeglądarek!!!
-   /// -moz-animation: changePositionCharacter3 85s infinite;
-    //-webkit-animation: changePositionCharacter3 85s infinite;
+    @include addOtherWebsites(changePositionCharacter3 85s infinite);
     
 }
 
@@ -353,7 +336,7 @@ h2{
     color: black;
     font-size: 25px;
     margin-top: 3vh;
-    margin-left: 10vw;
+    //margin-left: 10vw;
 }
 
 
