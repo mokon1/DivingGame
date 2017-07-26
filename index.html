@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title> GAME </title>
-    <link rel="stylesheet" href="css/index.css" type="text/css"> <!-- ZMIANA NAZWY PLIKU!!! -->
+    <link rel="stylesheet" href="css/index.css" type="text/css">
     <meta name="viewport" content="width=device-width initial-scale=1">
     <!--<script
     src="https://code.jquery.com/jquery-2.2.4.min.js"
@@ -20,76 +20,93 @@
         <source src="audio/ocean.wav"/>
     </audio>
     <audio class="coins" loop>
-        <source src="audio/coins.mp3" class/>
+        <source src="audio/coins.mp3" />
     </audio>
     <audio class="end" loop>
         <source src="audio/end.wav" class="ocean" loop="loop"/>
     </audio>
     
     <!-- START SCREEN -->
-    <section id="startScreen" class="screen">
-        <div class="startBtn button">
-            <p>START</p>
-        </div>
-        <div class="instructionBtn button">
-            <p>INSTRUCTIONS</p>
-        </div>
-        <div class="exitBtn button">
-            <p><a href="https://www.github.com/mokon1">EXIT</a></p>
-        </div>
-        <div class="musicBtn button">
-            <p>SOUND OFF</p>
-        </div>
-        <!--czy potrzebne?
-            <div class="button">
-            <p>
-                <span class="plus"> + </span><span class="volume"></span><span class="minus"> - </span>
-            </p>
-        </div>-->
-        <div class="tableScoresBtn button">
-            <p> SCORE </p>
+    <section id="startScreen">
+        <ul>
+            <li class="startBtn button"> START </li>
+            <li class="instructionBtn button">INSTRUKCJA</li>
+            <li class="exitBtn button"><a href="https://www.github.com/mokon1">WYJŚCIE</a></li>
+            <li class="musicBtn button">MUZYKA: WYŁĄCZ</li>
+            <li class="tableScoresBtn button">WYNIKI</li>
+        </ul>
+        <div class="author">
+            <p class="bold">mokon</p>
         </div>
     </section>
     
     <!-- INSTRUCTION SCREEN -->
     <section id="instructionScreen">
+        <h2>INSTRUKCJA</h2>
+        <p class="instructionText">
+            Twoim zadaniem jest zebrać jak najwięcej punktów.<br> Masz na to 1 minutę.
+        </p>
         <div class="instruction">
-            <p class="instructionText">
-                Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna.
-            </p>
-            <div class="direction">
-                <div class="left">
-                    <div class="arrowLeft"></div>
-                </div>
-                <div class="right">
-                    <div class="arrowRight"></div>
-                </div>
-                <div class="up">
-                    <div class="arrowUp"></div>
-                </div>
-                <div class="down">
-                    <div class="arrowDown"></div>
-                </div>
+            <div class="profit bold inline">
+                <h3>Zbieraj monety:</h3>
+                <ul >     
+                    <li><div class="silverCoin inline"></div><p class="inline">5 pkt</p></li>
+                    <li><div class="goldCoin inline"></div><p class="inline">10 pkt</p></li>
+                </ul>
+            </div>
+            <div class="danger bold inline">
+                <h3>Unikaj: </h3>
+                <ul> 
+                    <li><div class="instructionFishBlack"></div></li>
+                    <li class="diver"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></li>
+                </ul>
             </div>
         </div>
-        <div class="endGameBtn button">
+        <div class="direction">
+            <h3>Używaj strzałek na klawiaturze.</h3>
+            <ul>
+                <li class="box">
+                    <i class="up"></i>
+                </li>
+                <li class="box inline">
+                     <i class="left"></i>
+                </li>
+                <li class="box inline">
+                    <i class="down"></i>
+                </li>
+                <li class="box inline">
+                    <i class="right"></i>
+                </li>
+            </ul>
+        </div>
+        <div class="endGameBtn smallButton">
             <p>EXIT</p>
         </div>
     </section>
     
-    <!-- GAME SCREEN -->
+    <!-- GAME SCREEN
     <section id="gameScreen">
-        <div class="blackAndWhite"><img src="pictures/clown-fish.png"/></div>
-        <div class="brownAndRed"><img src="pictures/brownAndRed.gif"/></div>
-        <div class="blueAndRed"><img src="pictures/blueAndRed.gif"/></div>
-        <div class="fishes"><img src="pictures/fishes.gif"/></div>
+        <div class="fishBlack"></div>
+        <div class="fishBlue"></div>
+        <div class="fishGreen fish"></div>
+        <div class="fishRed"></div>
+        <div class="fishYellow fish"></div>
+        <div class="fishPurple"></div>
            
-        <div class="character"><img src="pic/nurek.gif"/></div>
+           
+      <!--  <div class="character"><img src="pic/nurek.gif"/></div>-->
         
         
         <!--POPRAWIĆ INNE ELEMENTY
-        <div class="item character2"><img src="pic/nurek.gif"/></div>
-        <div class="item character3"><img src="pic/nurek.gif"/></div> -->
+        <div class="character3"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
+        
+        
+        <div class="character2"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
+        
+        
+        
+        <div class="character"> <a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0003.gif" border="0" alt="animated-diver-image-0003"/></a></div>
+        
         
         <div class="item silverCoin"></div>
         <div class="item silverCoin"></div>
@@ -103,32 +120,29 @@
         <div class="item goldCoin"></div>
 
     
-        <div class="endGameBtn"> <!--  smallButton rightPosition ? -->
+        <div class="endGameBtn"> <!--  smallButton rightPosition ?
             <p class="smallButton ">EXIT</p>
         </div>
-    </section> 
+    </section>
     
     <section id="information">
         <h2>Pozostało: <span id="time"></span> sekund</h2>
         <h3>Wynik: <span id="result"></span> </h3>
-    </section>
+    </section>  -->
     
-    <!-- END GAME -->
-    <section id="endScreen">
-        <div class="score">
-            <p>
-               <b> KONIEC GRY<br/> Twój wynik to: <span class="showResult"></span></b>
-            </p>
-        </div>
         
+    <!-- END SCREEN -->
+    <section id="endScreen">
+        <p class="endScore">
+            KONIEC GRY<br/> Twój wynik to: <span class="showResult"></span>
+        </p>
         <form class="addScore">
             <label> Imię:
                 <input type="text" class="getName">
             </label>
-            <label> 
-            Wynik: <span class="showResult2"></span>
+            <label> Wynik: 
+                <input type="text" class="showResult2">
             </label>
-                
             <label>
                 <input type="submit" id="addScoreBtn" class="smallButton" value="Zapisz wynik">
             </label>
@@ -136,17 +150,9 @@
         <h2>Najlepsze wyniki:</h2>
         <ul class="tableScores">
         </ul>
- 
-        <div class="endGameBtn">  <!--  smallButton rightPosition ? -->
-            <p class="smallButton ">EXIT</p>
+        <div class="endGameBtn">
+            <p class="smallButton">EXIT</p>
         </div>
     </section>
-    
-   <!-- czy porzebne??<div class="scene">
-    <div class="element" data-x="300" data-y="100" data-speed="0.1" data-z="1"></div>
-    <div class="element" data-x="350" data-y="150" data-speed="0.2" data-z="2"></div>
-    <div class="element" data-x="500" data-y="300" data-speed="0.3" data-z="3"></div>
-</div>-->
-
 </body>
 </html>

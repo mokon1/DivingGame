@@ -1,315 +1,207 @@
+html{
+    font-size: 16px;
+}
 body{
     background-color: lightblue;
 }
 
 #startScreen, #instructionScreen, #gameScreen, #endScreen{
     width: 80vw;
+    max-width: 1920px;
     height: 80vh;
     margin: 0 auto;
-    //font-size: 0;
-} 
+    background-image: url('../pictures/background.jpg');
+    background-repeat: no-repeat;
+    background-size:cover; 
+    position: relative;
+    display: none;
+}
+.bold{
+    font-weight: bold;
+}
+.inline{
+    display: inline-block;
+}
 
 /* START SCREEN */
 #startScreen{
     border: 2px solid yellow;
-    position: relative;
-    background-image: url('../pic/fishes/background-17520_1920.jpg');
-    background-repeat: no-repeat;
-    background-size:cover; 
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-a:link{
-    text-decoration: none;
-}
-a:visited{
-    color: black;
-}
-a:hover{
-    color: white;
+a{
+    &:link{
+        text-decoration: none;
+    }
+    &:visited{
+        color: black;
+    }
+    &:hover{
+        color: white;
+    }
 }
 
 .button{
-    width: 200px;
-    //height: 80px;
+    padding: 10px;
     margin-top: 20px;
     border: 2px solid white;
     background-color: lightblue;
     opacity: 0.5;
     cursor: pointer;
+    font-size: 1.57rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.author{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    border: 0.5px solid white;
+    background-color: lightblue;
+    opacity: 0.5;
+    padding: 2px;
     p{
-        font-size: 25px;
-        text-align: center;
-        font-weight: bold;
-    }
+        font-size: 0.625rem;
+    }    
 }
-/* brak w html?/
-.volume{
-    border: 1px solid green;
-    width: 80%;
-    height: 20px;
-}
-*/
 
 /* INSTRUCTION */
 #instructionScreen{
-    margin: 0 auto;
     border: 2px solid yellow;
-    position: relative;
-    background-image: url('../pic/fishes/background-17520_1920.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;  
-    align-items: center;
+    display: flex;
     flex-direction: column;
-    display: none;
-    .instruction{
-        width: 40vw;
-        margin-top: 10vh;
-    }
+    align-items: center;
     .instructionText{
-        font-size: 25px;
+        padding: 20px 20px;
+        font-size: 1.57rem;
         text-align: center;
-        font-weight: bold;
     }
+    .instruction{
+        width: 55%; //75% 
+        margin: 20px auto;
+    }
+}
+.profit{
+    vertical-align:top;
+    h3{
+        color:darkblue;
+    }
+    ul{
+        margin-top: 20px;
+    }
+}
+.danger{
+    margin-left: 40px;
+    vertical-align:top;
+    h3{
+        color: red;
+    }
+    ul{
+        li{
+            vertical-align:top;
+            display: inline-block;
+        }
+    }     
+}
+.instructionFishBlack{
+    background-image: url(../pictures/fishes.png);
+    width: 88px;
+    height: 63px;
+    animation: fishBlackAnimation 1s steps(4) infinite;
+}
+.diver{
+    height: 150px;
+    width: 150px;
+    img{
+        width: 100%;
+    }
+}
+.direction{
+    position: absolute;
+    bottom: 10px;
+    padding: 20px;
+    ul{
+        margin-left: 30px;
+        li{
+            &:nth-child(1){
+                margin-left: 108px;
+            }
+            &:nth-child(2){
+                margin-left: 53px;
+            }
+        }
+    }
+}
+li{
+    list-style-type: none;
+}
+.box{
+    border: 3px solid black;
+    border-radius: 10%;
+    height: 50px;
+    width: 50px;
+    margin-top: 5px;
+    position: relative;
+}
+i{
+    position: absolute;
+    border-style: solid;
+    border-width: 0 15px 20px 15px;
+    border-color: transparent transparent white transparent;
+    left: 18%;
+}
+.up{
+   top:25%;
+}
+.left{
+    transform: rotate(-90deg);
+    top:25%;
+}
+.down{
+    transform: rotate(-180deg);
+    top:35%;
+}
+.right{
+    transform: rotate(90deg);
+    top:25%;
 }
 .endGameBtn{
     position: absolute;
     bottom: 10px;
     right: 20px;
 }
-/*.buttons{
-    position: absolute;
-    bottom: 10px;
-    right: 20px;
-}*/
 
-// do zrobienia instrukcja:
-.direction{
-    margin-left: 20px;
-    .left, .right, .up, .down{
-        display: inline-block;
-        margin-left: 20px;
-       //width: 30px;
-       //height: 30px;
-       // border: 1px solid red;
-        //display: inline-block;
-        background-color: black;
-        vertical-align: top;
-        text-align: center;
-        p.smallText{
-            color: white;
-            font-size: 12px;
-        }
-    }
-}
-.arrowLeft{
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-right: 20px solid white;
-}
-.arrowRight{
-    width: 0;
-    height: 0;
-    border-top: 20px solid transparent;
-    border-bottom: 20px solid transparent;
-    border-left: 20px solid white;
-}
-.arrowUp{
-    width: 0;
-    height: 0;
-    border-top: 20px solid white;
-    border-right: 20px solid transparent;
-    border-left: 20px solid transparent;
-}
-.arrowDown{
-    width: 0;
-    height: 0;
-    border-bottom: 20px solid white;
-    border-right: 20px solid transparent;
-    border-left: 20px solid transparent;
-}
-
-
-/* GAME */
-#gameScreen{
-    display: none;
-    width: 90vw;
-    margin: 0 auto;
-    border: 2px solid yellow;
-    position: relative;
-    background-image: url('../pic/fishes/background-17520_1920.jpg');
-    background-repeat: no-repeat;
-    background-size:cover; 
-    overflow: hidden;
-}
-
-#information{
-    width: 80vw;
-    height: 15vh;
-    margin: 0 auto;
-    display: none;
-}
-.blackAndWhite{
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    img{
-        height: 100%;
-        width: 100%;
-    }
-    @include addOtherWebsites('fish-blackAndWhite 85s');
-    
-}
-
-.brownAndRed{
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    z-index: 11;
-    img{
-        height: 100%;
-        width: 100%;
-    }
-   @include addOtherWebsites(fish-brownAndRed 35s);
-}
-
-.blueAndRed{
-    width: 120px;
-    height: 120px;
-    position: absolute;
-    z-index: 12;
-    img{
-        height: 100%;
-        width: 100%;
-    }
-    @include addOtherWebsites(fish-blueAndRed 60s);
-}
-
-
-.fishes{
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    z-index: 11;
-    img{
-        height: 100%;
-        width: 100%;
-    }
-    top: 500px;
-    
-    @include addOtherWebsites(fish-fishes 60s);
-}
-
-
-.character{
-    height: 100px;
-    width: 200px;
-    position: absolute;
-    z-index: 10;
-    top: 350px;
-    img{
-        height: 100%;
-        width: 100%;
-    }
-}
-.character2{
-    height: 100px;
-    position: absolute;
-    z-index: 10;
-    top: 10px;
-    left: 200px;
-    img{
-        height: 100%;
-        width: 100%;
-    }
-     @include addOtherWebsites(changePositionCharacter2 85s 5s infinite);
-    
-}
-
-.character3{
-    height: 100px;
-    position: absolute;
-    z-index: 10;
-    bottom: 100px;
-    left: 300px;
-    img{
-        height: 100%;
-        width: 100%;
-    }
-    @include addOtherWebsites(changePositionCharacter3 85s infinite);
-    
-}
-
-.item{
-    position: relative;
-}
-.silverCoin{
-    width: 30px;
-    height: 30px;
-    background-color: silver;
-    border-radius: 50%;
-    //transform: skew(10deg);
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-}
-.goldCoin{
-    width: 30px;
-    height: 30px;
-    background-color: gold;
-    border-radius: 50%;
-    //transform: skew(10deg);
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-}
+/* GAME SCREEN */
 .smallButton{
-    width: auto;
-    height: auto;
-    margin: 0;
     border: 2px solid white;
     background-color: lightblue;
     opacity: 0.5;
     cursor: pointer;
     right: 20px;
-    p{
-        font-size: 20px;
-        border: 2px solid white;
-        text-align: center;
-        font-weight: bold;
-    }
+    font-size: 1rem;
+    font-weight: bold;
 }
 
+
+// do zrobienia - game screen
 
 /* END SCREEN */
 #endScreen{
-    display: none;
-    background-image: url('../pic/fishes/background-17520_1920.jpg');
-    background-repeat: no-repeat;
-    background-size:cover;
-    position: relative;
-    div{
-        text-align: center;
+    text-align: center;
+    font-size: 1.375rem;
+    h2{
+        padding-top: 30px;
     }
-    p, span{
-        font-size: 22px;
-        color: black;
-    }
-}
-.getName{
-    padding: 5px;
-}
-#addScoreBtn{
-    padding: 5px;
 }
 .addScore{
-    margin-top: 25px;
-    font-size: 22px;
+    margin-top: 45px;
     label{
         margin-left: 15px;
+        input{
+            padding: 5px;
+        }
     }
 }
 .tableScores{
@@ -317,10 +209,9 @@ a:hover{
     margin: 0 auto;
     list-style: none;
     li{
-       font-size: 20px;
+        font-size: 1.25rem;
         font-weight: bold;
-        color:blue;
-        //border: 1px solid lightblue;
+        color:darkblue;
         margin-top: 3px;
         p{
             display: inline-block;
@@ -330,15 +221,4 @@ a:hover{
             text-align: center;
         }
     }
-    //position: absolute;
 }
-h2{
-    color: black;
-    font-size: 25px;
-    margin-top: 3vh;
-    //margin-left: 10vw;
-}
-
-
-
-

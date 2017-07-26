@@ -14,6 +14,6 @@
     @include addOtherWebsites(moveToBottom 10s forwards);
 }
 
-.hidden{
-    
+.invisible{
+    display: none;
 }
