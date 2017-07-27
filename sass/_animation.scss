@@ -1,113 +1,5 @@
 /* Animation created in SASS */
-
-@keyframes fish-blackAndWhite{
-    0%{
-        transform: translate(1800px, 10px);
-    }
-    30%{
-        transform: translate(1000px, 40px) rotate(-10deg);
-    }
-    60%{
-        transform: translate(600px, 90px) rotate(-40deg);
-    }
-    100%{
-        transform: translate(-100px, 520px);
-    }
-}
-
-
-@keyframes fish-brownAndRed{
-    0%{
-        transform: translate(0px, 50px);
-    }
-    30%{
-        transform: translate(300px, 300px) scale(2);
-    }
-    100%{
-        transform: translate(1600px, 900px) scale(1);
-    }
-}
-
-
-@keyframes fish-blueAndRed{
-
-    20%{
-        transform: translate(0px, 20px);
-    }
-    70%{
-        transform: translate(800px, 600px);
-    }
-    100%{
-        transform: translate(1600px, 900px);
-    }
-}
-
-
-@keyframes fish-fishes{
-
-    0%{
-        transform: translate(0px, -100px);
-    }
-    30%{
-        transform: translate(300px, -300px) scale(1.5);
-    }
-    100%{
-        transform: translate(0px, 0px) scale(1);
-    }
-}
-
-
-/*@keyframes changePositionCharacter2{
-    0%{
-        transform: translate(200px, 10px);
-    }
-    100%{
-        transform: translate(2000px, 520px);
-    }
-}*/
-
-
-@keyframes changePositionCharacter2{
-   @include changePositionCharacter2;
-}
-@-webkit-keyframes changePositionCharacter2{
-    @include changePositionCharacter2;
-}
-@-moz-keyframes changePositionCharacter2{
-    @include changePositionCharacter2;
-}
-@-o-keyframes changePositionCharacter2{
-    @include changePositionCharacter2;
-}
-
-
-
-
-@keyframes changePositionCharacter3{
-   @include changePositionCharacter3;
-}
-@-webkit-keyframes changePositionCharacter3{
-    @include changePositionCharacter3;
-}
-@-moz-keyframes changePositionCharacter3{
-    @include changePositionCharacter3;
-}
-@-o-keyframes changePositionCharacter3{
-    @include changePositionCharacter3;
-}
-
-
-/*@keyframes changePositionCharacter3{
-    0%{
-        transform: translate(100px, 0px);
-    }
-    100%{
-        transform: translate(1500px, 50px);
-    }
-}*/
-
-
-
+ 
 @keyframes finalCounting{
    @include finalCounting;
 }
@@ -120,23 +12,6 @@
 @-o-keyframes finalCounting{
     @include finalCounting;
 }
-
-
-/*@keyframes finalCounting{
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}*/
-
-/*@keyframes moveToLeft{
-    100%{
-        transform: translateX(-500px) translateY(-50px);
-    }
-}*/
-
 
 @keyframes moveToLeft{
    @include moveToLeft;
@@ -151,32 +26,6 @@
     @include moveToLeft;
 }
 
-
-
-/*
-@keyframes moveToBottom{
-    100%{
-        transform: translateY(80px);
-    }
-}
-@-webkit-keyframes moveToBottom{
-    100%{
-        transform: translateY(80px);
-    }
-}
-@-moz-keyframes moveToBottom{
-    100%{
-        transform: translateY(80px);
-    }
-}
-@-o-keyframes moveToBottom{
-    100%{
-        transform: translateY(80px);
-    }
-}
-*/
-
-
 @keyframes moveToBottom{
    @include moveToBottom;
 }
@@ -190,5 +39,159 @@
     @include moveToBottom;
 }
 
+//FISHES-ANIMATION
+@keyframes fishBlackAnimationLeft{
+   @include fishBlackAnimationLeft;
+}
+@-webkit-keyframes fishBlackAnimationLeft{
+    @include fishBlackAnimationLeft;
+}
+@-moz-keyframes fishBlackAnimationLeft{
+    @include fishBlackAnimationLeft;
+}
+@-o-keyframes fishBlackAnimationLeft{
+    @include fishBlackAnimationLeft;
+}
 
+@keyframes fishBlackAnimationRight{
+   @include fishBlackAnimationRight;
+}
+@-webkit-keyframes fishBlackAnimationRight{
+    @include fishBlackAnimationRight;
+}
+@-moz-keyframes fishBlackAnimationRight{
+    @include fishBlackAnimationRight;
+}
+@-o-keyframes fishBlackAnimationRight{
+    @include fishBlackAnimationRight;
+}
 
+@keyframes fishBlackAnimation{
+   @include fishBlackAnimation;
+}
+@-webkit-keyframes fishBlackAnimation{
+    @include fishBlackAnimation;
+}
+@-moz-keyframes fishBlackAnimation{
+    @include fishBlackAnimation;
+}
+@-o-keyframes fishBlackAnimation{
+    @include fishBlackAnimation;
+}
+
+@keyframes fishBlueAnimation{
+   @include fishBlueAnimation;
+}
+@-webkit-keyframes fishBlueAnimation{
+    @include fishBlueAnimation;
+}
+@-moz-keyframes fishBlueAnimation{
+    @include fishBlueAnimation;
+}
+@-o-keyframes fishBlueAnimation{
+    @include fishBlueAnimation;
+}
+
+@keyframes fishBlueAnimation2{
+   @include fishBlueAnimation2;
+}
+@-webkit-keyframes fishBlueAnimation2{
+    @include fishBlueAnimation2;
+}
+@-moz-keyframes fishBlueAnimation2{
+    @include fishBlueAnimation2;
+}
+@-o-keyframes fishBlueAnimation2{
+    @include fishBlueAnimation2;
+}
+
+@keyframes fishGreenAnimation{
+   @include fishGreenAnimation;
+}
+@-webkit-keyframes fishGreenAnimation{
+    @include fishGreenAnimation;
+}
+@-moz-keyframes fishGreenAnimation{
+    @include fishGreenAnimation;
+}
+@-o-keyframes fishGreenAnimation{
+    @include fishGreenAnimation;
+}
+
+@keyframes fishGreenAnimation2{
+   @include fishGreenAnimation2;
+}
+@-webkit-keyframes fishGreenAnimation2{
+    @include fishGreenAnimation2;
+}
+@-moz-keyframes fishGreenAnimation2{
+    @include fishGreenAnimation2;
+}
+@-o-keyframes fishGreenAnimation2{
+    @include fishGreenAnimation2;
+}
+
+@keyframes fishRedAnimation{
+   @include fishRedAnimation;
+}
+@-webkit-keyframes fishRedAnimation{
+    @include fishRedAnimation;
+}
+@-moz-keyframes fishRedAnimation{
+    @include fishRedAnimation;
+}
+@-o-keyframes fishRedAnimation{
+    @include fishRedAnimation;
+}
+
+@keyframes fishRedAnimation2{
+   @include fishRedAnimation2;
+}
+@-webkit-keyframes fishRedAnimation2{
+    @include fishRedAnimation2;
+}
+@-moz-keyframes fishRedAnimation2{
+    @include fishRedAnimation2;
+}
+@-o-keyframes fishRedAnimation2{
+    @include fishRedAnimation2;
+}
+
+@keyframes fishYellowAnimation{
+   @include fishYellowAnimation;
+}
+@-webkit-keyframes fishYellowAnimation{
+    @include fishYellowAnimation;
+}
+@-moz-keyframes fishYellowAnimation{
+    @include fishYellowAnimation;
+}
+@-o-keyframes fishYellowAnimation{
+    @include fishYellowAnimation;
+}
+
+@keyframes fishYellowAnimation2{
+   @include fishYellowAnimation2;
+}
+@-webkit-keyframes fishYellowAnimation2{
+    @include fishYellowAnimation2;
+}
+@-moz-keyframes fishYellowAnimation2{
+    @include fishYellowAnimation2;
+}
+@-o-keyframes fishYellowAnimation2{
+    @include fishYellowAnimation2;
+}
+
+@keyframes fishPurpleAnimation{
+   @include fishPurpleAnimation;
+}
+@-webkit-keyframes fishPurpleAnimation{
+    @include fishPurpleAnimation;
+}
+@-moz-keyframes fishPurpleAnimation{
+    @include fishPurpleAnimation;
+}
+@-o-keyframes fishPurpleAnimation{
+    @include fishPurpleAnimation;
+}

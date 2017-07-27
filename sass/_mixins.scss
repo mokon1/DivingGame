@@ -5,30 +5,6 @@
     -o-animation: $animation;
     animation: $animation;
 }
-///
-
-@mixin changePositionCharacter2{
-    0%{
-        transform: translate(200px, 10px);
-    }
-    100%{
-        transform: translate(2000px, 520px);
-    }
-}
-
-
-@mixin changePositionCharacter3{
-    0%{
-        transform: translate(100px, 0px);
-    }
-    100%{
-        transform: translate(1500px, 50px);
-    }
-}
-
-
-
-///////
 
 @mixin finalCounting{
      0%{
@@ -54,6 +30,7 @@
     background-image: url(../pictures/fishes.png);
     position: absolute;
 }
+
 @mixin coins{
     width: 30px;
     height: 30px;
@@ -62,4 +39,130 @@
     position: relative;
 }
 
+@mixin fishBlackAnimationLeft{
+     0%{
+        background-position:  5px -548px;
+    }
+    100%{
+        background-position: -360px -548px;
+    }
+}
 
+@mixin fishBlackAnimationRight{
+     0%{
+        background-position:  5px 0px;
+    }
+    100%{
+        background-position: -360px 0px;
+    }
+}
+
+@mixin fishBlackAnimation{
+    0%{
+        transform: translate(480px, 500px) scale(.5);
+    }
+    70%{
+        transform: translate(300px, -100px) scale(1);
+    }
+    100%{
+        transform: translate(-100px, 0px) scale(1.2);
+    }
+}
+
+@mixin fishBlueAnimation{
+    0%{
+        background-position:  0px -84px;
+    }
+    100%{
+        background-position: -456px -84px;
+    }
+}
+
+@mixin fishBlueAnimation2{
+     20%{
+        transform: scale(0.5);
+        top: 500px;
+    }
+    50%{
+        left: 10px;
+        transform: scale(1);
+    }
+    100%{
+        margin-top: -300px;
+        transform: scale(0.5);
+    }
+}
+
+@mixin fishGreenAnimation{
+    0%{
+        background-position:  0px -173px;
+    }
+    100%{
+        background-position: -504px -173px;
+    }
+}
+
+@mixin fishGreenAnimation2{
+    50%{
+        left: 800px;
+        top: 600px;
+        transform: scale(0.5);
+    }
+    80%{
+        left: 400px;
+        top: 600px;
+    }
+    100%{
+        left: 100px;
+        top: 600px;
+    }
+}
+
+@mixin fishRedAnimation{
+    0%{
+        background-position:  0px -264px;
+    }
+    100%{
+        background-position: -507px -264px;
+    }
+}
+
+@mixin fishRedAnimation2{
+    0%{
+        transform: translate(800px, -100px);
+    }
+    100%{
+        transform: translate(600px, 300px) scale(.5);
+    }
+}
+
+@mixin fishYellowAnimation{
+    0%{
+        background-position:  0px -372px;
+    }
+    100%{
+        background-position: -400px -372px;
+    }
+}
+
+@mixin fishYellowAnimation2{
+    50%{
+        margin-left: 300px;
+        top: 500px;
+    }
+    80%{
+        margin-left: 10px;
+    }
+    100%{
+        top: 300px;
+    }
+}
+
+@mixin fishPurpleAnimation{
+    0%{
+        background-position:  0px -444px;
+    }
+    100%{
+        background-position: -500px -444px;
+    }
+}

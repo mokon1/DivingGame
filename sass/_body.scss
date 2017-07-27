@@ -109,7 +109,7 @@ a{
     background-image: url(../pictures/fishes.png);
     width: 88px;
     height: 63px;
-    animation: fishBlackAnimation 1s steps(4) infinite;
+    @include addOtherWebsites('fishBlackAnimation 1s steps(4) infinite');
 }
 .diver{
     background-image: url(../pictures/scuba-diving-147683_640.png);
@@ -217,15 +217,14 @@ i{
     top: 10px;
     left: 10px;
     z-index: 11;
-    animation: fishBlackAnimationLeft .5s steps(4) infinite,
-        fish-blackAndWhite 10s infinite;
+    @include addOtherWebsites('fishBlackAnimationLeft .5s steps(4) infinite, fish-blackAndWhite 10s infinite');
 }
 .fishBlack1, .fishBlack2 {
     @include fishImage;
     z-index: 1;
     width: 88px;
     height: 63px;
-    animation: fishBlackAnimationRight 1s steps(4) infinite;
+    @include addOtherWebsites('fishBlackAnimationRight 1s steps(4) infinite');
 }
 .fishBlack3{
     @include fishImage;
@@ -238,10 +237,8 @@ i{
     z-index: 1;
     width: 88px;
     height: 63px;
-    animation: fishBlackAnimationLeft 1s steps(4) infinite, fishBlackAnimation 10s infinite;
+    @include addOtherWebsites('fishBlackAnimationLeft 1s steps(4) infinite, fishBlackAnimation 10s infinite');
 }
-
-
 .fishBlue{
     @include fishImage;
     z-index: 13;
@@ -249,11 +246,8 @@ i{
     height: 75px;
     top: 100px;
     left: 1300px;
-    animation: fishBlueAnimation 500ms steps(4) infinite, fishBlueAnimation2 45s;
+    @include addOtherWebsites('fishBlueAnimation 500ms steps(4) infinite, fishBlueAnimation2 45s');
 }
-
-
-
 .fishGreen{
     @include fishImage;
     z-index: 11;
@@ -261,10 +255,8 @@ i{
     height: 90px;
     left: 90vw;
     top: 90vh;
-    animation: fishGreenAnimation 500ms steps(4) infinite, fishGreenAnimation2 45s;
+    @include addOtherWebsites('fishGreenAnimation 500ms steps(4) infinite, fishGreenAnimation2 45s');
 }
-
-
 .fishRed{
     @include fishImage;
     z-index: 11;
@@ -272,19 +264,15 @@ i{
     height: 84px;
     top: 10px;
     left: 10px;
-   animation: fishRedAnimation 2s steps(4) infinite, fishRedAnimation2 45s;
+    @include addOtherWebsites('fishRedAnimation 2s steps(4) infinite, fishRedAnimation2 45s');
 }
-
-
 .fishYellow{
     @include fishImage;
     z-index: 11;
     width: 101px;
     height: 77px;
-    animation: fishYellowAnimation 500ms steps(4) infinite,  fishYellowAnimation2 20s;
+    @include addOtherWebsites('fishYellowAnimation 500ms steps(4) infinite,  fishYellowAnimation2 20s');
 }
-
-
 .fishPurple{
     @include fishImage;
     z-index: 5;
@@ -292,9 +280,8 @@ i{
     height: 100px;
     top: 10px;
     left: 10px;
-    animation: fishPurpleAnimation 2s steps(4) infinite;
+    @include addOtherWebsites('fishPurpleAnimation 2s steps(4) infinite');
 }
-
 .smallButton{
     border: 2px solid white;
     background-color: lightblue;
