@@ -70,7 +70,7 @@ a{
 /* INSTRUCTION */
 #instructionScreen{
     border: 2px solid yellow;
-    display: flex;
+    //display: flex; //added in js
     flex-direction: column;
     align-items: center;
     .instructionText{
@@ -92,7 +92,7 @@ a{
         margin-top: 20px;
     }
 }
-.danger{
+.dangerInstruction{
     margin-left: 40px;
     vertical-align:top;
     h3{
@@ -105,18 +105,17 @@ a{
         }
     }     
 }
-.instructionFishBlack{
+.fishBlackInstruction{
     background-image: url(../pictures/fishes.png);
     width: 88px;
     height: 63px;
     animation: fishBlackAnimation 1s steps(4) infinite;
 }
 .diver{
-    height: 150px;
-    width: 150px;
-    img{
-        width: 100%;
-    }
+    background-image: url(../pictures/scuba-diving-147683_640.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
 }
 .direction{
     position: absolute;
@@ -153,19 +152,19 @@ i{
     left: 18%;
 }
 .up{
-   top:25%;
+   top: 25%;
 }
 .left{
     transform: rotate(-90deg);
-    top:25%;
+    top: 25%;
 }
 .down{
     transform: rotate(-180deg);
-    top:35%;
+    top: 35%;
 }
 .right{
     transform: rotate(90deg);
-    top:25%;
+    top: 25%;
 }
 .endGameBtn{
     position: absolute;
@@ -174,6 +173,128 @@ i{
 }
 
 /* GAME SCREEN */
+#gameScreen{
+    display: none;
+    width: 90vw;
+    margin: 0 auto;
+    border: 2px solid yellow;
+    overflow: hidden;
+}
+#information{
+    width: 80vw;
+    height: 15vh;
+    margin: 0 auto;
+    display: none;
+}
+.silverCoin{
+    @include coins;
+    background-color: silver;
+}
+.goldCoin{
+    @include coins;
+    background-color: gold;
+}
+.diver2{
+    position: absolute;
+    z-index: 10;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.diver3{
+    position: absolute;
+    z-index: 8;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.fishBlack0{
+    @include fishImage;
+    width: 88px;
+    height: 63px;
+    top: 10px;
+    left: 10px;
+    z-index: 11;
+    animation: fishBlackAnimationLeft .5s steps(4) infinite,
+        fish-blackAndWhite 10s infinite;
+}
+.fishBlack1, .fishBlack2 {
+    @include fishImage;
+    z-index: 1;
+    width: 88px;
+    height: 63px;
+    animation: fishBlackAnimationRight 1s steps(4) infinite;
+}
+.fishBlack3{
+    @include fishImage;
+    z-index: 1;
+    width: 88px;
+    height: 63px;
+}
+.fishBlack4{
+    @include fishImage;
+    z-index: 1;
+    width: 88px;
+    height: 63px;
+    animation: fishBlackAnimationLeft 1s steps(4) infinite, fishBlackAnimation 10s infinite;
+}
+
+
+.fishBlue{
+    @include fishImage;
+    z-index: 13;
+    width: 114px;
+    height: 75px;
+    top: 100px;
+    left: 1300px;
+    animation: fishBlueAnimation 500ms steps(4) infinite, fishBlueAnimation2 45s;
+}
+
+
+
+.fishGreen{
+    @include fishImage;
+    z-index: 11;
+    width: 126px;
+    height: 90px;
+    left: 90vw;
+    top: 90vh;
+    animation: fishGreenAnimation 500ms steps(4) infinite, fishGreenAnimation2 45s;
+}
+
+
+.fishRed{
+    @include fishImage;
+    z-index: 11;
+    width: 125px;
+    height: 84px;
+    top: 10px;
+    left: 10px;
+   animation: fishRedAnimation 2s steps(4) infinite, fishRedAnimation2 45s;
+}
+
+
+.fishYellow{
+    @include fishImage;
+    z-index: 11;
+    width: 101px;
+    height: 77px;
+    animation: fishYellowAnimation 500ms steps(4) infinite,  fishYellowAnimation2 20s;
+}
+
+
+.fishPurple{
+    @include fishImage;
+    z-index: 5;
+    width: 123px;
+    height: 100px;
+    top: 10px;
+    left: 10px;
+    animation: fishPurpleAnimation 2s steps(4) infinite;
+}
+
 .smallButton{
     border: 2px solid white;
     background-color: lightblue;
@@ -184,8 +305,6 @@ i{
     font-weight: bold;
 }
 
-
-// do zrobienia - game screen
 
 /* END SCREEN */
 #endScreen{
@@ -221,4 +340,9 @@ i{
             text-align: center;
         }
     }
+}
+.showResult2{
+    background-color: transparent;
+    width: 50px;
+    font-size: 1.5rem;
 }
