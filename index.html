@@ -13,27 +13,27 @@
     <script src="js/script.js"></script>
 </head>
 <body>
-    <audio class="music" loop>
-        <source src="audio/start.mp3" class="music" loop/>
+   <audio id="startSong" loop>
+        <source src="audio/start.mp3" class="music" loop />
     </audio>
-    <audio class="ocean" loop>
-        <source src="audio/ocean.wav"/>
+    <audio id="oceanSong" loop>
+        <source src="audio/ocean.wav" />
     </audio>
-    <audio class="coins" loop>
+    <audio id="coinsSong" loop>
         <source src="audio/coins.mp3" />
     </audio>
-    <audio class="end" loop>
-        <source src="audio/end.wav" class="ocean" loop="loop"/>
+    <audio id="endSong" loop>
+        <source src="audio/end.wav" class="ocean" loop />
     </audio>
     
     <!-- START SCREEN -->
-    <section id="startScreen">
+    <section id="startScreen" class="screen">
         <ul>
             <li class="startBtn button"> START </li>
-            <li class="instructionBtn button">INSTRUKCJA</li>
-            <li class="exitBtn button"><a href="https://www.github.com/mokon1">WYJŚCIE</a></li>
-            <li class="musicBtn button">MUZYKA: WYŁĄCZ</li>
-            <li class="tableScoresBtn button">WYNIKI</li>
+            <li class="instructionBtn button">INSTRUCTION</li>
+            <li class="exitBtn button"><a href="https://www.github.com/mokon1">EXIT</a></li>
+            <li class="musicBtn button">SOUND OFF</li>
+            <li class="tableScoresBtn button">SCORES</li>
         </ul>
         <div class="author">
             <p class="bold">mokon</p>
@@ -41,29 +41,29 @@
     </section>
     
     <!-- INSTRUCTION SCREEN -->
-    <section id="instructionScreen">
-        <h2>INSTRUKCJA</h2>
+    <section id="instructionScreen" class="screen"> <!-- dodać głównego nurka ? -->
+        <h2>INSTRUCTION</h2>
         <p class="instructionText">
-            Twoim zadaniem jest zebrać jak najwięcej punktów.<br> Masz na to 1 minutę.
+            Collect coins. You have 40 seconds.
         </p>
         <div class="instruction">
             <div class="profit bold inline">
-                <h3>Zbieraj monety:</h3>
+                <h3>Collect coins:</h3>
                 <ul >     
-                    <li><div class="silverCoin inline"></div><p class="inline">5 pkt</p></li>
-                    <li><div class="goldCoin inline"></div><p class="inline">10 pkt</p></li>
+                    <li><div class="silverCoin inline"></div><p class="inline">5 points</p></li>
+                    <li><div class="goldCoin inline"></div><p class="inline">10 points</p></li>
                 </ul>
             </div>
-            <div class="danger bold inline">
-                <h3>Unikaj: </h3>
+            <div class="dangerInstruction bold inline">
+                <h3>Beware of: </h3>
                 <ul> 
                     <li><div class="instructionFishBlack"></div></li>
-                    <li class="diver"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></li>
+                    <li class="instructionDiver"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></li>
                 </ul>
             </div>
         </div>
         <div class="direction">
-            <h3>Używaj strzałek na klawiaturze.</h3>
+            <h3> Use the arrow keys to move the diver: </h3>
             <ul>
                 <li class="box">
                     <i class="up"></i>
@@ -83,10 +83,14 @@
             <p>EXIT</p>
         </div>
     </section>
-    
-    <!-- GAME SCREEN
-    <section id="gameScreen">
+
+     <!-- GAME SCREEN -->
+    <section id="gameScreen" class="screen">
         <div class="fishBlack"></div>
+        <div class="fishBlack1 item"></div>
+        <div class="fishBlack2 item"></div>
+        <div class="fishBlack3 item"></div>
+        <div class="fishBlack4 item"></div>
         <div class="fishBlue"></div>
         <div class="fishGreen fish"></div>
         <div class="fishRed"></div>
@@ -94,19 +98,13 @@
         <div class="fishPurple"></div>
            
            
-      <!--  <div class="character"><img src="pic/nurek.gif"/></div>-->
+        <div class="diver"></div>
+        
+        <!--POPRAWIĆ INNE ELEMENTY  -->
+        <div class="diver3 danger"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
         
         
-        <!--POPRAWIĆ INNE ELEMENTY
-        <div class="character3"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
-        
-        
-        <div class="character2"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
-        
-        
-        
-        <div class="character"> <a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0003.gif" border="0" alt="animated-diver-image-0003"/></a></div>
-        
+        <div class="diver2 danger"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
         
         <div class="item silverCoin"></div>
         <div class="item silverCoin"></div>
@@ -120,39 +118,39 @@
         <div class="item goldCoin"></div>
 
     
-        <div class="endGameBtn"> <!--  smallButton rightPosition ?
+        <div class="endGameBtn"> 
             <p class="smallButton ">EXIT</p>
         </div>
     </section>
     
-    <section id="information">
-        <h2>Pozostało: <span id="time"></span> sekund</h2>
-        <h3>Wynik: <span id="result"></span> </h3>
-    </section>  -->
-    
+    <section id="information" class="screen">
+        <h2>Time: <span id="time"></span></h2>
+        <h3>Score: <span id="result"></span> </h3>
+    </section>
         
     <!-- END SCREEN -->
-    <section id="endScreen">
+    <section id="endScreen" class="screen">
         <p class="endScore">
-            KONIEC GRY<br/> Twój wynik to: <span class="showResult"></span>
+            THE END<br/> Your score: <span class="showResult bold"></span>
         </p>
         <form class="addScore">
-            <label> Imię:
+            <label> Name:
                 <input type="text" class="getName">
             </label>
-            <label> Wynik: 
+            <label> Score: 
                 <input type="text" class="showResult2">
             </label>
             <label>
                 <input type="submit" id="addScoreBtn" class="smallButton" value="Zapisz wynik">
             </label>
         </form>
-        <h2>Najlepsze wyniki:</h2>
+        <h2>The best scores:</h2>
         <ul class="tableScores">
         </ul>
         <div class="endGameBtn">
             <p class="smallButton">EXIT</p>
         </div>
     </section>
+   <!-- do zrobienia 'media' -->
 </body>
 </html>
