@@ -39,8 +39,8 @@ $(function(){
     var collectedCoins = 0;
     var score = 0;
     var minDistance = 100; 
-    var maxDistanceTop = $('#gameScreen').height()-100;     //coinsy muszą spadać
-    var maxDistanceLeft = $('#gameScreen').width()+400;     //coinsy musza sie ruszac
+    var maxDistanceTop = $('#gameScreen').height()-100;     //move down coins
+    var maxDistanceLeft = $('#gameScreen').width()+400;     //move coins
     var randomX = Math.random() * (widthScreen-200)+100;
     var randomY = Math.random() * (heightScreen-400)+200; 
     
@@ -52,9 +52,37 @@ $(function(){
     var silverCoins = $(".silverCoin");
     var goldCoins = $(".goldCoin");
     var danger = $(".danger");
-   //var elements = $(".item"); do usunięcia
     //var fishBlack = $(".fishBlack1");
     
+    var objDiver = {
+        height: 100,
+        width: 150,
+        x: 10,
+        y: 10
+    }
+     
+    function OtherDiver(setHeight, setWidth, setX, setY, setDelay) {
+        this.height= setHeight;
+        this.width= setWidth;
+        this.x= setX;
+        this.y= setY;
+        this.delay= setDelay
+    }
+    var objDiver2 = new OtherDiver(150,200,randomX, randomY,8000);
+    var objDiver3 = new OtherDiver(150,200,randomX, randomY,2000);  
+    
+    function FishBlack (setX, setY, setDelay) {
+        this.x= setX;
+        this.y= setY;
+        this.delay= setDelay
+    }
+    
+    var objFishBlack1 = new FishBlack(randomX-310,randomY+150,1000);
+    var objFishBlack2 = new FishBlack(randomX,randomY,2000);
+    var objFishBlack3 = new FishBlack(widthScreen-300,heightScreen-300,3000); 
+    var objFishBlack4 = new FishBlack(widthScreen-300,heightScreen-300,3000); 
+    
+
         
     // START NEW GAME
     function startNewGame(){
@@ -159,8 +187,89 @@ $(function(){
         showResult2.val(score);
     }
     
+    
     /* NEW GAME */
     function startPosition() {
+        
+        var objDiverProp = objDiver;
+         $('.diver').css({
+             'height': objDiverProp.height+'px',
+             'width': objDiverProp.width+'px',
+             'left': objDiverProp.x+'px',
+             'top': objDiverProp.y+'px'
+         });
+
+        var objDiverProp2 = objDiver2; 
+        $('.diver2').css({
+             'height': objDiver2.height+'px',
+             'width': objDiver2.width+'px',
+             'left': objDiver2.x+'px',
+             'top': objDiver2.y+'px'
+         });    
+
+        $(".diver2").delay(objDiverProp2.delay).animate({
+            left: "50px", 
+            top: heightScreen-500
+        },10000).delay(objDiverProp2.delay).animate({
+            left: "+=200px",
+            top: heightScreen-500
+        },10000).animate({
+            left: randomX,
+            top: 0
+        },9000);
+
+
+        var objDiverProp3 = objDiver3;
+        $('.diver3').css({
+             'height': objDiverProp3.height+'px',
+             'width': objDiverProp3.width+'px',
+             'left': objDiverProp3.x-100+'px',
+             'top': objDiverProp3.y-200+'px'
+         });
+        
+        
+        $(".diver3").delay(objDiverProp3.delay).animate({
+            left: "-=50px", 
+            top: heightScreen-250
+        },8000).delay(5000).animate({
+            left: "+=800px",
+            top: heightScreen-500
+        },10000).animate({
+            left: randomX,
+            top: randomY
+        },1000);
+        
+       
+        var objFishBlack1Prop = objFishBlack1;
+         $('.fishBlack1').css({
+             'left': objFishBlack1Prop.x+'px',
+             'top': objFishBlack1Prop.y+'px'
+         });
+        
+        var objFishBlack2Prop = objFishBlack2;
+         $('.fishBlack2').css({
+             'left': objFishBlack2Prop.x+'px',
+             'top': objFishBlack2Prop.y+'px'
+         });
+        
+        var objFishBlack3Prop = objFishBlack3;
+         $('.fishBlack3').css({
+             'left': objFishBlack3Prop.x+'px',
+             'top': objFishBlack3Prop.y+'px'
+         });
+        
+         $(".fishBlack3").delay(objFishBlack3Prop.delay).animate({
+            left: randomX, 
+            top: randomY
+        },7000).delay(objFishBlack3Prop.delay).animate({
+            left: "+300px",
+            top: heightScreen-100
+        },5000).animate({
+            left: randomX+300,
+            top: randomY+500
+        },9000);
+        
+        
             goldCoins.each(function(){
                 left2 = ((Math.random() * (maxDistanceLeft-minDistance))+minDistance).toFixed();
                 top2 = ((Math.random()*(maxDistanceTop-minDistance))+minDistance).toFixed();
