@@ -3,15 +3,15 @@
 .finalCounting{
     color: red;
     font-size: 32px;
-    @include addOtherWebsites(finalCounting 1s 5s infinite);
+    @include supportForBrowsers(finalCounting 1s 5s infinite);
 }
 
 .moveToLeft{
-    @include addOtherWebsites(moveToLeft 10s forwards);
+    @include supportForBrowsers(moveToLeft 10s forwards);
 }
 
 .moveToBottom{
-    @include addOtherWebsites(moveToBottom 10s forwards);
+    @include supportForBrowsers(moveToBottom 10s forwards);
 }
 
 .invisible{

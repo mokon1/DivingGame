@@ -109,13 +109,14 @@ a{
     background-image: url(../pictures/fishes.png);
     width: 88px;
     height: 63px;
-    @include addOtherWebsites('fishBlackAnimation 1s steps(4) infinite');
+    @include supportForBrowsers('fishBlackAnimation 1s steps(4) infinite');
 }
 .diver{
     background-image: url(../pictures/scuba-diving-147683_640.png);
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
+    z-index: 8;
 }
 .direction{
     position: absolute;
@@ -214,17 +215,17 @@ i{
     @include fishImage;
     width: 88px;
     height: 63px;
-    top: 10px;
-    left: 10px;
+    top: 20vh;
+    left: 80vw;
     z-index: 11;
-    @include addOtherWebsites('fishBlackAnimationLeft .5s steps(4) infinite, fish-blackAndWhite 10s infinite');
+    @include supportForBrowsers(fishBlackAnimationLeft .5s steps(4) infinite);
 }
 .fishBlack1, .fishBlack2 {
     @include fishImage;
     z-index: 1;
     width: 88px;
     height: 63px;
-    @include addOtherWebsites('fishBlackAnimationRight 1s steps(4) infinite');
+    @include supportForBrowsers(fishBlackAnimationRight 1s steps(4) infinite);
 }
 .fishBlack3{
     @include fishImage;
@@ -237,50 +238,52 @@ i{
     z-index: 1;
     width: 88px;
     height: 63px;
-    @include addOtherWebsites('fishBlackAnimationLeft 1s steps(4) infinite, fishBlackAnimation 10s infinite');
+    @include supportForBrowsers(fishBlackAnimationLeft 1s steps(4) infinite, fishBlackAnimation 10s infinite);
 }
 .fishBlue{
     @include fishImage;
     z-index: 13;
     width: 114px;
     height: 75px;
-    top: 100px;
-    left: 1300px;
-    @include addOtherWebsites('fishBlueAnimation 500ms steps(4) infinite, fishBlueAnimation2 45s');
+    top: 10vh;
+    left: 50vw;
+    @include supportForBrowsers(fishBlueAnimation 500ms steps(4) infinite, fishBlueAnimation2 45s);
 }
 .fishGreen{
     @include fishImage;
-    z-index: 11;
+    z-index: 5;
     width: 126px;
     height: 90px;
-    left: 90vw;
+    left: 70vw;
     top: 90vh;
-    @include addOtherWebsites('fishGreenAnimation 500ms steps(4) infinite, fishGreenAnimation2 45s');
+    @include supportForBrowsers(fishGreenAnimation 500ms steps(4) infinite, fishGreenAnimation2 45s);
 }
 .fishRed{
     @include fishImage;
-    z-index: 11;
+    z-index: 1;
     width: 125px;
     height: 84px;
-    top: 10px;
-    left: 10px;
-    @include addOtherWebsites('fishRedAnimation 2s steps(4) infinite, fishRedAnimation2 45s');
+    top: 10vh;
+    left: 10vw;
+    @include supportForBrowsers(fishRedAnimation 2s steps(4) infinite, fishRedAnimation2 45s);
 }
 .fishYellow{
     @include fishImage;
     z-index: 11;
     width: 101px;
     height: 77px;
-    @include addOtherWebsites('fishYellowAnimation 500ms steps(4) infinite,  fishYellowAnimation2 20s');
+    top: 90vh;
+    left: 90vw;
+    @include supportForBrowsers(fishYellowAnimation 500ms steps(4) infinite,  fishYellowAnimation2 23s infinite);
 }
 .fishPurple{
     @include fishImage;
     z-index: 5;
     width: 123px;
     height: 100px;
-    top: 10px;
-    left: 10px;
-    @include addOtherWebsites('fishPurpleAnimation 2s steps(4) infinite');
+    top: 40vh;
+    left: 60vw;
+    @include supportForBrowsers(fishPurpleAnimation 2s steps(4) infinite);
 }
 .smallButton{
     border: 2px solid white;

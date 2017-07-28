@@ -1,5 +1,5 @@
 /**/
-@mixin addOtherWebsites($animation){
+@mixin supportForBrowsers($animation...){
     -webkit-animation: $animation;
     -moz-animation: $animation;
     -o-animation: $animation;
@@ -81,14 +81,14 @@
 @mixin fishBlueAnimation2{
      20%{
         transform: scale(0.5);
-        top: 500px;
+        top: 50vh;
     }
     50%{
-        left: 10px;
+        left: 10vw;
         transform: scale(1);
     }
     100%{
-        margin-top: -300px;
+        top: -20vh;
         transform: scale(0.5);
     }
 }
@@ -103,18 +103,17 @@
 }
 
 @mixin fishGreenAnimation2{
-    50%{
-        left: 800px;
-        top: 600px;
+    10%{
+        left: 60vw;
+        top: 60vh;
         transform: scale(0.5);
     }
-    80%{
-        left: 400px;
-        top: 600px;
+    50%{
+        left: 40vw;
     }
     100%{
-        left: 100px;
-        top: 600px;
+        left: 10vw;
+        top: 30vh;
     }
 }
 
@@ -146,15 +145,16 @@
 }
 
 @mixin fishYellowAnimation2{
-    50%{
-        margin-left: 300px;
-        top: 500px;
+    65%{
+        left: 30vw;
+        top: 70vh;
     }
     80%{
-        margin-left: 10px;
+        left: 60vw;
     }
     100%{
-        top: 300px;
+        top: 10vh;
+        left: -10vw;
     }
 }
 
