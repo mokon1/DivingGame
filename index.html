@@ -10,7 +10,7 @@
     integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
     crossorigin="anonymous"></script>-->
     <script src="jquery-3.2.1.min.js"></script>
-    <script src="js/script2.js"></script>
+    <script src="js/script.js"></script>
 </head>
 <body>
    <audio id="startSong" loop>
@@ -19,8 +19,8 @@
     <audio id="oceanSong" loop>
         <source src="audio/ocean.wav" />
     </audio>
-    <audio id="coinsSong" loop>
-        <source src="audio/coins.mp3" />
+    <audio id="coinsSong">
+        <source src="audio/coins.wav" />
     </audio>
     <audio id="endSong" loop>
         <source src="audio/end.wav" class="ocean" loop />
@@ -47,23 +47,30 @@
             Collect coins. You have 40 seconds.
         </p>
         <div class="instruction">
+            <div class="user bold inline">
+                <p>You are:</p>
+                <div class="diverInstruction">     
+                   
+                </div>
+            </div>
             <div class="profit bold inline">
-                <h3>Collect coins:</h3>
+                <p>Collect coins:</p>
                 <ul >     
-                    <li><div class="silverCoin inline"></div><p class="inline">5 points</p></li>
-                    <li><div class="goldCoin inline"></div><p class="inline">10 points</p></li>
+                    <li><div class="silverCoin inline"></div><p class="inline">&nbsp;&nbsp;5 points</p></li>
+                    <li><div class="goldCoin inline"></div><p class="inline">&nbsp;&nbsp;10 points</p></li>
                 </ul>
             </div>
             <div class="dangerInstruction bold inline">
-                <h3>Beware of: </h3>
-                <ul> 
-                    <li><div class="fishBlackInstruction"></div></li>
-                    <li class="instructionDiver"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></li>
-                </ul>
+                <p>Beware of: </p>
+                
+                   <div class="fishBlackInstruction"></div>
+                    <!--  <li><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022" class="diver2Instruction"/></a></li>
+                    <li>and sea current<br>- you'll feel it!</li> -->
+                
             </div>
         </div>
         <div class="direction">
-            <h3> Use the arrow keys to move the diver: </h3>
+            <p> Use the arrow keys to move the diver: </p>
             <ul>
                 <li class="box">
                     <i class="up"></i>
@@ -86,7 +93,7 @@
 
      <!-- GAME SCREEN -->
     <section id="gameScreen" class="screen">
-        <div class="fishBlack0"></div>
+        <div class="fishBlack0 item"></div>
         <div class="fishBlack1 item"></div>
         <div class="fishBlack2 item"></div>
         <div class="fishBlack3 item"></div>
@@ -100,26 +107,26 @@
            
         <div class="diver"></div>
         
-        <div class="diver2 danger"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
+        <div class="diver2"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
         
-        <div class="diver3 danger"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
+        <div class="diver3"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
         
         
-        <div class="item silverCoin"></div>
-        <div class="item silverCoin"></div>
-        <div class="item silverCoin"></div>
-        <div class="item silverCoin"></div>
-        <div class="item silverCoin"></div>
-        <div class="item silverCoin"></div>
-        <div class="item goldCoin"></div>
-        <div class="item goldCoin"></div>
-        <div class="item goldCoin"></div>
-        <div class="item goldCoin"></div>
+        <div class="coin silverCoin item"></div>
+        <div class="coin silverCoin item"></div>
+        <div class="coin silverCoin item"></div>
+        <div class="coin silverCoin item"></div>
+        <div class="coin silverCoin item"></div>
+        <div class="coin silverCoin item"></div>
+        <div class="coin goldCoin item"></div>
+        <div class="coin goldCoin item"></div>
+        <div class="coin goldCoin item"></div>
+        <div class="coin goldCoin item"></div>
 
     
-        <div class="endGameBtn"> 
+      <!--  <div class="endGameBtn"> 
             <p class="smallButton ">EXIT</p>
-        </div>
+        </div>-->
     </section>
     
     <section id="information" class="screen">
