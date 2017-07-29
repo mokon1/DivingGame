@@ -10,10 +10,6 @@
     @include supportForBrowsers(moveToLeft 10s forwards);
 }
 
-.moveToBottom{
-    @include supportForBrowsers(moveToBottom 10s forwards);
-}
-
 .invisible{
     display: none;
 }

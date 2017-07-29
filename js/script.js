@@ -1,4 +1,3 @@
-//scipt jest ok //zmiana kolejności/zmiana music//dodanie obiektow//addCoin-dodanie//
 $(function(){
     
     //MUSIC
@@ -40,19 +39,19 @@ $(function(){
     var score = 0;
     var minDistance = 100; 
     var maxDistanceTop = $('#gameScreen').height()-100;     //move down coins
-    var maxDistanceLeft = $('#gameScreen').width()+400;     //move coins
-    var randomX = Math.random() * (widthScreen-200)+100;
+    var maxDistanceLeft = $('#gameScreen').width()+100;     //move coins
+    var randomX = Math.random() * (widthScreen-200)+200;
     var randomY = Math.random() * (heightScreen-400)+200; 
+    
     
     //ELEMENTS IN GAME
     var diver = $('.diver');
     var heightDiver = diver.height();
     var widthDiver = diver.width();
-    var coins = $('.item');
+    var coins = $('.coin');
     var silverCoins = $(".silverCoin");
     var goldCoins = $(".goldCoin");
     var danger = $(".danger");
-    //var fishBlack = $(".fishBlack1");
     
     var objDiver = {
         height: 100,
@@ -130,6 +129,8 @@ $(function(){
                         } else if ($(this).hasClass('goldCoin')){
                             $(this).fadeOut(100);
                             score+=10;
+                            collectedCoins++;
+                            addCoins();
                         }else{
                            // endGame();
                             //clearInterval(interval);
@@ -161,17 +162,24 @@ $(function(){
         },1000);
     }
     
-    function addCoins(){       
-        if (collectedCoins%3 == 0){
+       function addCoins(){       
+        if (collectedCoins%2 == 0){
             coins.each(function(){
+                //console.log($(this));
                 if ($(this).css("display")==="none"){
-                    newLeft = ((Math.random() * (maxDistanceLeft-minDistance))+minDistance).toFixed();
-                    newTop = ((Math.random()*(maxDistanceTop-minDistance))+minDistance).toFixed();
+                    newLeft2 = ((Math.random() * (maxDistanceLeft-minDistance))+minDistance).toFixed();
+                    newTop2 = ((Math.random()*(maxDistanceTop-minDistance))+minDistance).toFixed();
                     $(this).css({
-                        'left': newLeft+'px',
-                        'top': newTop+'px',
+                        'left': newLeft2+'px',
+                        'top': newTop2+'px',
                         'display': 'block'
                     },500);
+                    
+                    if(newLeft2>$('#gameScreen').width()-50){
+                        $(this).addClass('moveToLeft');
+                        console.log($(this));
+                    }
+                    
                 }
             })     
         }
@@ -270,41 +278,22 @@ $(function(){
         },9000);
         
         
-            goldCoins.each(function(){
-                left2 = ((Math.random() * (maxDistanceLeft-minDistance))+minDistance).toFixed();
-                top2 = ((Math.random()*(maxDistanceTop-minDistance))+minDistance).toFixed();
-                $(this).css({
-                    'left': left2+'px',
-                    'top':  top2+'px',
-                    'display': 'block'
-                },500);
-
-                if(left2>$('#gameScreen').width()-50){
-                    $(this).addClass('moveToLeft');
-                }   
-                if(top2<200){
-                    $(this).addClass('moveToBottom');
-                }
-            });
-
-            silverCoins.each(function(){
-                left2 = ((Math.random() * (maxDistanceLeft-minDistance))+minDistance).toFixed();
-                top2 = ((Math.random()*(maxDistanceTop-minDistance))+minDistance).toFixed();
-                //console.log($('#gameScreen').height());
-                $(this).css({
-                    'left': left2+'px',
-                    'top':  top2+'px',
-                    'display': 'block'
-                },5000);
-
-                if(left2>$('#gameScreen').width()-50){
-                    $(this).addClass('moveToLeft');
-                }   
-                if(top2<200){
-                    $(this).addClass('moveToBottom');
-                }
-        });
-    }
+    coins.each(function(){
+        left2 = ((Math.random() * maxDistanceLeft)+minDistance).toFixed();
+        top2 = ((Math.random()*(maxDistanceTop-minDistance))+minDistance).toFixed();
+        $(this).css({
+            'left': left2+'px',
+            'top':  top2+'px',
+            'display': 'block'
+        },500);
+            
+        if(left2>$('#gameScreen').width()-50){
+            $(this).addClass('moveToLeft');
+            console.log($(this));
+        }   
+        
+    });
+}
     
   
     /* MOVEMENT */
@@ -435,7 +424,6 @@ $(function(){
         
         addScoreBtn.on('click',function(event){
             event.preventDefault();
-
             var getName = $('.getName').val();
             var getResult = $('.showResult2').text();
             
