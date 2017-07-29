@@ -5,7 +5,7 @@ body{
     background-color: lightblue;
 }
 
-#startScreen, #instructionScreen, #gameScreen, #endScreen{
+#startScreen, #instructionScreen, #gameScreen, #endScreen, #scoresScreen, #smallScreen{
     width: 80vw;
     max-width: 1920px;
     height: 80vh;
@@ -75,17 +75,35 @@ a{
     align-items: center;
     .instructionText{
         padding: 20px 20px;
-        font-size: 1.57rem;
+        //font-size: 1.57rem;
         text-align: center;
     }
     .instruction{
-        width: 55%; //75% 
-        margin: 20px auto;
+      //  width: 55%; //75% 
+        margin: 10vh auto;
+    }
+    p{
+            font-size: 1.5rem;
+        }
+}
+.user{
+    vertical-align:top;
+    p{
+        color:darkgreen;
+    }
+    .diverInstruction{
+        background-image: url(../pictures/scuba-diving-147683_640.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 180%;
+        height: 100px;
     }
 }
+
 .profit{
+    margin-left: 150px;
     vertical-align:top;
-    h3{
+    p{
         color:darkblue;
     }
     ul{
@@ -93,37 +111,43 @@ a{
     }
 }
 .dangerInstruction{
-    margin-left: 40px;
+    margin-left: 60px;
     vertical-align:top;
-    h3{
+    p{
         color: red;
     }
-    ul{
-        li{
-            vertical-align:top;
-            display: inline-block;
-        }
+    div{
+        vertical-align:top;
+        display: inline-block; 
+        mergin-left: 30%;
     }     
 }
 .fishBlackInstruction{
     background-image: url(../pictures/fishes.png);
     width: 88px;
     height: 63px;
-    @include supportForBrowsers('fishBlackAnimation 1s steps(4) infinite');
+    //@include supportForBrowsers(fishBlackAnimationRight 1s steps(4) infinite);
 }
+/*.diver2Instruction{
+    width: 60%;
+    height: 60%;
+    margin-left: 20px;
+}
+*/
 .diver{
     background-image: url(../pictures/scuba-diving-147683_640.png);
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
-    z-index: 8;
+    z-index: 1;
 }
 .direction{
     position: absolute;
-    bottom: 10px;
+   // bottom: 10px;
+    margin-top: 50vh;
     padding: 20px;
     ul{
-        margin-left: 30px;
+        margin-left: 20%;
         li{
             &:nth-child(1){
                 margin-left: 108px;
@@ -205,7 +229,7 @@ i{
 }
 .diver3{
     position: absolute;
-    z-index: 8;
+    z-index: 12;
     img{
         width: 100%;
         height: 100%;
@@ -260,7 +284,7 @@ i{
 }
 .fishRed{
     @include fishImage;
-    z-index: 1;
+    z-index: 10;
     width: 125px;
     height: 84px;
     top: 10vh;
@@ -335,4 +359,25 @@ i{
     background-color: transparent;
     width: 50px;
     font-size: 1.5rem;
+}
+/* SMALL SCREEN */
+#smallScreen{
+    .smallScreen{
+        width: 60vw;
+        font-size: 2rem;
+        margin: 0 auto;
+        padding-top: 30vh;
+        text-align: center;
+    }
+}
+
+/* SCORES SCREEN */
+#scoresScreen{
+    .scoresScreenText{
+        width: 60vw;
+        font-size: 2rem;
+        margin: 0 auto;
+        padding-top: 30vh;
+        text-align: center;
+    }
 }
