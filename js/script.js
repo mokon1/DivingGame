@@ -23,6 +23,7 @@ $(function(){
     var widthScreen = gameScreen.width();
     var instructionScreen = $("#instructionScreen");
     var endScreen = $("#endScreen");
+    var scoresScreen = $("#scoresScreen");
     
     //ELEMENTS THAT SHOW INFORMATION
     var information = $("#information");
@@ -187,7 +188,7 @@ $(function(){
     
  
     function endGame(){
-        screens.fadeOut(1000);
+        screens.hide();
         endScreen.fadeIn(1100);
         oceanSong.pause();
         endSong.play();
@@ -336,22 +337,21 @@ $(function(){
     
     
     /* BUTTONS */
-    startBtn.on("click", function(event){
-        event.preventDefault(); //????
+  startBtn.on("click", function(event){
         startNewGame();
         startScreen.fadeOut(50); //nie zmieniać czasu, bo ptk nie będą się naliczać/złoto ukrywać
         gameScreen.fadeIn(100);
         information.fadeIn(100);
         startSong.pause();
+        endSong.pause();
         oceanSong.play();
         endScore.removeClass('invisible'); //connected with SCORES SCREEN.
         form.removeClass('invisible'); //connected with SCORES SCREEN.
     });
     
     instructionBtn.on("click",function(event){
-        event.preventDefault();//????
-        startScreen.fadeOut(100);
-        instructionScreen.delay(1000).fadeIn(1000).css("display","flex");
+        startScreen.hide();
+        instructionScreen.css("display","flex").show();
     });
     
     musicBtn.on("click",function(event){
@@ -366,20 +366,22 @@ $(function(){
     });
           
     tableScoresBtn.on("click",function(event){
-        event.preventDefault();
-        startScreen.fadeOut(1000);
-        endScreen.delay(1000).fadeIn(1000);
+        startScreen.hide();
+        endScreen.show();
         endScore.addClass('invisible');
         form.addClass('invisible');
+        /* //version on the Internet 
+        startScreen.hide();
+        scoresScreen.show();*/
+         
     });
     
     endGameBtn.on("click", function(event){
-        event.preventDefault();
-        screens.fadeOut(1000);
-       // screens.css("")
-        startScreen.delay(1000).fadeIn(1000);
-        time.removeClass('finalCounting');        
-    });   
+        screens.hide();
+        // scoresScreen.hide(); //version on the Internet 
+        startScreen.show();
+        time.removeClass('finalCounting');
+    });
     
     
     
