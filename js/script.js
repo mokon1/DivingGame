@@ -44,7 +44,6 @@ $(function(){
     var randomX = Math.random() * (widthScreen-200)+200;
     var randomY = Math.random() * (heightScreen-400)+200; 
     
-    
     //ELEMENTS IN GAME
     var diver = $('.diver');
     var heightDiver = diver.height();
@@ -83,27 +82,24 @@ $(function(){
     var objFishBlack4 = new FishBlack(widthScreen-300,heightScreen-300,3000); 
     
 
-        
     // START NEW GAME
     function startNewGame(){
         score = 0;
         timeCounter = 45;
         startPosition();
-        functionSetInterval();
+        interval = setInterval(functionSetInterval,1000);
     }
 
             
        /* TIME COUNTER */
-    function functionSetInterval(){        
-        
-        var interval = setInterval(function(){
+    function functionSetInterval(){
             
             //timeCounter
             timeCounter--;
             if(timeCounter === 10){
                 time.addClass('finalCounting');
             }
-            if (timeCounter === 0){
+            if (timeCounter <= 0){
                 clearInterval(interval);
                 endGame();
             }
@@ -129,15 +125,22 @@ $(function(){
                             addCoins();
                         } else if ($(this).hasClass('goldCoin')){
                             $(this).fadeOut(100);
+                            coinsSong.play();
                             score+=10;
                             collectedCoins++;
                             addCoins();
                         }else{
-                           // endGame();
-                            //clearInterval(interval);
-                        }    
+                            timeCounter-=10;
+                            $('body').animate({
+                                'background-color': '#F170E7'
+                            },1000,function(){
+                                $(this).animate({
+                                     'background-color': '#99CCFF'
+                                },500)                               
+                            });
+                        }
                     }
-            });  
+            });
             
             //borders
             if (diver.position().top < -50) {
@@ -145,9 +148,9 @@ $(function(){
                     'top': '0' +'px'
                 });
             }
-            if (diver.position().top > heightScreen) {
+            if (diver.position().top  > heightScreen-200) {
                diver.animate({
-                    'top': heightScreen-heightDiver
+                    'top': '70vh'
                 });
             } 
             if (diver.position().left < -50) {
@@ -155,18 +158,16 @@ $(function(){
                     'left': '0' +'px'
                 });
             } 
-            if (diver.position().left + widthDiver > widthScreen-350) { //minus 350-sea current
+            if (diver.position().left > widthScreen-150) { //minus 350-sea current
                diver.animate({
                     'left': '60vw'
                 });
-            } 
-        },1000);
-    }
+            }
+   }
     
-       function addCoins(){       
+    function addCoins(){       
         if (collectedCoins%2 == 0){
             coins.each(function(){
-                //console.log($(this));
                 if ($(this).css("display")==="none"){
                     newLeft2 = ((Math.random() * (maxDistanceLeft-minDistance))+minDistance).toFixed();
                     newTop2 = ((Math.random()*(maxDistanceTop-minDistance))+minDistance).toFixed();
@@ -176,11 +177,10 @@ $(function(){
                         'display': 'block'
                     },500);
                     
-                    if(newLeft2>$('#gameScreen').width()-50){
-                        $(this).addClass('moveToLeft');
-                        console.log($(this));
-                    }
-                    
+                if(newLeft2>$('#gameScreen').width()-50){
+                    $(this).addClass('moveToLeft');
+                    console.log($(this));
+                }
                 }
             })     
         }
@@ -278,23 +278,22 @@ $(function(){
             top: randomY+500
         },9000);
         
-        
-    coins.each(function(){
-        left2 = ((Math.random() * maxDistanceLeft)+minDistance).toFixed();
-        top2 = ((Math.random()*(maxDistanceTop-minDistance))+minDistance).toFixed();
-        $(this).css({
-            'left': left2+'px',
-            'top':  top2+'px',
-            'display': 'block'
-        },500);
             
-        if(left2>$('#gameScreen').width()-50){
-            $(this).addClass('moveToLeft');
-            console.log($(this));
-        }   
-        
-    });
-}
+        coins.each(function(){
+            left2 = ((Math.random() * maxDistanceLeft)+minDistance).toFixed();
+            top2 = ((Math.random()*(maxDistanceTop- minDistance))+minDistance).toFixed();
+            $(this).css({
+                'left': left2+'px',
+                'top':  top2+'px',
+                'display': 'block'
+            },500);
+            
+            if(left2>$('#gameScreen').width()-50){
+                $(this).addClass('moveToLeft');
+                console.log($(this));
+            }
+        });
+    }
     
   
     /* MOVEMENT */
@@ -337,7 +336,7 @@ $(function(){
     
     
     /* BUTTONS */
-  startBtn.on("click", function(event){
+    startBtn.on("click", function(event){
         startNewGame();
         startScreen.fadeOut(50); //nie zmieniać czasu, bo ptk nie będą się naliczać/złoto ukrywać
         gameScreen.fadeIn(100);
@@ -354,8 +353,7 @@ $(function(){
         instructionScreen.css("display","flex").show();
     });
     
-    musicBtn.on("click",function(event){
-        //*event.preventDefault();//????          
+    musicBtn.on("click",function(event){         
         if($(this).text() === "SOUND ON"){
             $(this).text("SOUND OFF");
             audio.prop("volume", 1);
@@ -381,12 +379,12 @@ $(function(){
         // scoresScreen.hide(); //version on the Internet 
         startScreen.show();
         time.removeClass('finalCounting');
-    });
+    });   
     
     
     
-        /* AJAX 
-    var tableScores = $('.tableScores'); //ul
+        /* AJAX
+    var tableScores = $('.tableScores');
     var scoreUrl = 'http://localhost:3000/game/';
     
     function loadScore(){
@@ -424,10 +422,11 @@ $(function(){
         var addScoreBtn = $('#addScoreBtn');
         //console.log(submitBtn);
         
-        addScoreBtn.on('click',function(event){
+        addScoreBtn.one('click',function(event){
             event.preventDefault();
+
             var getName = $('.getName').val();
-            var getResult = $('.showResult2').text();
+            var getResult = $('.showResult2').val();
             
             var jsonData = {  
                "name": getName,
@@ -449,8 +448,6 @@ $(function(){
         });
     }
     addResult();
-    */
-    
-
-    
+     */
+     
 });
