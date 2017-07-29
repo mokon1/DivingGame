@@ -70,70 +70,67 @@ a{
 /* INSTRUCTION */
 #instructionScreen{
     border: 2px solid yellow;
-    //display: flex; //added in js
     flex-direction: column;
     align-items: center;
     .instructionText{
         padding: 20px 20px;
-        //font-size: 1.57rem;
         text-align: center;
     }
     .instruction{
-      //  width: 55%; //75% 
-        margin: 10vh auto;
+        width: 80%;
+        margin-top: 10vh;
+        margin-left: 5vw;
     }
     p{
-            font-size: 1.5rem;
-        }
+        font-size: 1.5rem;
+    }
+}
+.user, .profit,.danger{
+    width: 33%;
 }
 .user{
     vertical-align:top;
     p{
         color:darkgreen;
+        margin-top: 10px;
     }
     .diverInstruction{
         background-image: url(../pictures/scuba-diving-147683_640.png);
         background-repeat: no-repeat;
         background-size: contain;
-        width: 180%;
         height: 100px;
+        margin-top: 10px;
     }
 }
-
 .profit{
-    margin-left: 150px;
     vertical-align:top;
     p{
         color:darkblue;
+        margin-left: 30px;
+        margin-top: 10px;
     }
-    ul{
-        margin-top: 20px;
+    div{
+        margin-top: 10px;
     }
 }
 .dangerInstruction{
-    margin-left: 60px;
     vertical-align:top;
     p{
         color: red;
+        margin-top: 10px;
     }
     div{
         vertical-align:top;
         display: inline-block; 
         mergin-left: 30%;
+        margin-top: 10px;
     }     
 }
 .fishBlackInstruction{
     background-image: url(../pictures/fishes.png);
     width: 88px;
     height: 63px;
-    //@include supportForBrowsers(fishBlackAnimationRight 1s steps(4) infinite);
 }
-/*.diver2Instruction{
-    width: 60%;
-    height: 60%;
-    margin-left: 20px;
-}
-*/
 .diver{
     background-image: url(../pictures/scuba-diving-147683_640.png);
     background-repeat: no-repeat;
@@ -143,11 +140,9 @@ a{
 }
 .direction{
     position: absolute;
-   // bottom: 10px;
     margin-top: 50vh;
     padding: 20px;
     ul{
-        margin-left: 20%;
         li{
             &:nth-child(1){
                 margin-left: 108px;
@@ -318,7 +313,6 @@ i{
     font-size: 1rem;
     font-weight: bold;
 }
-
 
 /* END SCREEN */
 #endScreen{
