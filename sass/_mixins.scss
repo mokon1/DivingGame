@@ -36,7 +36,7 @@
     height: 30px;
     border-radius: 50%;
     opacity: 0.8;
-    position: relative;
+    position: absolute;
 }
 
 @mixin fishBlackAnimationLeft{
@@ -65,7 +65,7 @@
         transform: translate(300px, -100px) scale(1);
     }
     100%{
-        transform: translate(-100px, 0px) scale(1.2);
+        transform: translate(0px, 0px) scale(1.2);
     }
 }
 
