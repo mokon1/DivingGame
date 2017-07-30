@@ -1,4 +1,3 @@
-/**/
 @mixin supportForBrowsers($animation...){
     -webkit-animation: $animation;
     -moz-animation: $animation;

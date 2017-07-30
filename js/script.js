@@ -338,7 +338,7 @@ $(function(){
     /* BUTTONS */
     startBtn.on("click", function(event){
         startNewGame();
-        startScreen.fadeOut(50); //nie zmieniać czasu, bo ptk nie będą się naliczać/złoto ukrywać
+        startScreen.fadeOut(50);
         gameScreen.fadeIn(100);
         information.fadeIn(100);
         startSong.pause();
@@ -383,7 +383,7 @@ $(function(){
     
     
     
-        /* AJAX
+        /* AJAX */
     var tableScores = $('.tableScores');
     var scoreUrl = 'http://localhost:3000/game/';
     
@@ -448,6 +448,6 @@ $(function(){
         });
     }
     addResult();
-     */
+    
      
 });

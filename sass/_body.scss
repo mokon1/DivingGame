@@ -95,7 +95,7 @@ a{
         margin-top: 10px;
     }
     .diverInstruction{
-        background-image: url(../pictures/scuba-diving-147683_640.png);
+        background-image: url(../pictures/scuba-diving.png);
         background-repeat: no-repeat;
         background-size: contain;
         height: 100px;
@@ -132,7 +132,7 @@ a{
     height: 63px;
 }
 .diver{
-    background-image: url(../pictures/scuba-diving-147683_640.png);
+    background-image: url(../pictures/scuba-diving.png);
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
@@ -237,7 +237,7 @@ i{
     top: 20vh;
     left: 80vw;
     z-index: 11;
-    @include supportForBrowsers(fishBlackAnimationLeft .5s steps(4) infinite);
+    @include supportForBrowsers(fishBlackAnimationLeft 500ms steps(4) infinite);
 }
 .fishBlack1, .fishBlack2 {
     @include fishImage;
@@ -333,7 +333,7 @@ i{
 }
 .tableScores{
     width: 50vw;
-    margin: 0 auto;
+    margin: 50px auto;
     list-style: none;
     li{
         font-size: 1.25rem;

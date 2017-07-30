@@ -5,15 +5,8 @@
     <title> GAME </title>
     <link rel="stylesheet" href="css/index.css" type="text/css">
     <meta name="viewport" content="width=device-width initial-scale=1">
-    <!--<script
-    src="https://code.jquery.com/jquery-2.2.4.min.js"
-    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-    crossorigin="anonymous"></script>-->
-    <script src="jquery-3.2.1.min.js"></script>
-    <script
-  src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"
-  integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js" integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE="crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </head>
 <body>
@@ -35,9 +28,9 @@
         <ul>
             <li class="startBtn button"> START </li>
             <li class="instructionBtn button">INSTRUCTION</li>
-            <li class="exitBtn button"><a href="https://www.github.com/mokon1">EXIT</a></li>
             <li class="musicBtn button">SOUND OFF</li>
             <li class="tableScoresBtn button">SCORES</li>
+            <li class="exitBtn button"><a href="https://www.github.com/mokon1">EXIT</a></li>
         </ul>
         <div class="author">
             <p class="bold">mokon</p>
@@ -45,30 +38,28 @@
     </section>
     
     <!-- INSTRUCTION SCREEN -->
-    <section id="instructionScreen" class="screen"> <!-- dodać głównego nurka ? -->
+    <section id="instructionScreen" class="screen">
         <h2>INSTRUCTION</h2>
-        <p class="instructionText">
+        <p class="instructionText bold">
             Collect coins. You have 40 seconds.
         </p>
         <div class="instruction">
             <div class="user bold inline">
                 <p>You are:</p>
                 <div class="diverInstruction">     
-                   
                 </div>
             </div>
             <div class="profit bold inline">
                 <p>Collect coins:</p> 
                 <div class="silverCoin inline"></div>
-                <p class="inline">&nbsp;&nbsp;5 points</p>
+                <p class="inline">&nbsp;&nbsp;1 point</p>
                 <div class="goldCoin"></div>
                 <p>&nbsp;&nbsp;10 points</p>
             </div>
             <div class="dangerInstruction bold inline">
                 <p>Beware of: </p>
                 <div class="fishBlackInstruction inline"></div>
-                <p class="inline">-10 seconds </p>    
-                
+                <p class="inline"> time </br> -10 seconds </p>
             </div>
         </div>
         <div class="direction">
@@ -105,15 +96,9 @@
         <div class="fishRed"></div>
         <div class="fishYellow fish"></div>
         <div class="fishPurple"></div>
-           
-           
         <div class="diver"></div>
-        
-        <div class="diver2"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
-        
+        <div class="diver2"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div>
         <div class="diver3"><a href="http://www.animatedimages.org/cat-divers-1142.htm"><img src="http://www.animatedimages.org/data/media/1142/animated-diver-image-0022.gif" border="0" alt="animated-diver-image-0022"/></a></div> 
-        
-        
         <div class="coin silverCoin item"></div>
         <div class="coin silverCoin item"></div>
         <div class="coin silverCoin item"></div>
@@ -124,11 +109,6 @@
         <div class="coin goldCoin item"></div>
         <div class="coin goldCoin item"></div>
         <div class="coin goldCoin item"></div>
-
-    
-      <!--  <div class="endGameBtn"> 
-            <p class="smallButton ">EXIT</p>
-        </div>-->
     </section>
     
     <section id="information" class="screen">
