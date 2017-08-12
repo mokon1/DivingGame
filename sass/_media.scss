@@ -1,6 +1,6 @@
 /* small screens */
 @media only screen and (max-width:1000px), (max-height:510px){
-    #startScreen, #instructionScreen, #gameScreen, #endScreen, #scoresScreen{
+    #startScreen, #instructionScreen, #gameScreen, #endScreen{
         display: none !important;
     }
     #smallScreen{

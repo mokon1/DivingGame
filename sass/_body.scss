@@ -5,7 +5,7 @@ body{
     background-color: lightblue;
 }
 
-#startScreen, #instructionScreen, #gameScreen, #endScreen, #scoresScreen, #smallScreen{
+#startScreen, #instructionScreen, #gameScreen, #endScreen, #smallScreen{
     width: 80vw;
     max-width: 1920px;
     height: 80vh;
@@ -116,7 +116,7 @@ a{
 .dangerInstruction{
     vertical-align:top;
     p{
-        color: red;
+        color: darkred;
         margin-top: 10px;
     }
     div{
@@ -357,17 +357,6 @@ i{
 /* SMALL SCREEN */
 #smallScreen{
     .smallScreen{
-        width: 60vw;
-        font-size: 2rem;
-        margin: 0 auto;
-        padding-top: 30vh;
-        text-align: center;
-    }
-}
-
-/* SCORES SCREEN */
-#scoresScreen{
-    .scoresScreenText{
         width: 60vw;
         font-size: 2rem;
         margin: 0 auto;

@@ -5,7 +5,6 @@ $(function(){
     var startSong = $("#startSong")[0];
     var oceanSong = $("#oceanSong")[0];
     var coinsSong = $("#coinsSong")[0];
-    var endSong = $("#endSong")[0];
     startSong.play();
      
     //BUTTONS
@@ -23,7 +22,6 @@ $(function(){
     var widthScreen = gameScreen.width();
     var instructionScreen = $("#instructionScreen");
     var endScreen = $("#endScreen");
-    var scoresScreen = $("#scoresScreen");
     
     //ELEMENTS THAT SHOW INFORMATION
     var information = $("#information");
@@ -96,7 +94,7 @@ $(function(){
             
             //timeCounter
             timeCounter--;
-            if(timeCounter === 10){
+            if(timeCounter <= 10){
                 time.addClass('finalCounting');
             }
             if (timeCounter <= 0){
@@ -116,7 +114,7 @@ $(function(){
                     (diver.position().left + diver.outerWidth() >=  $(this).position().left)
                         && 
                     (diver.position().left <= $(this).position().left + $(this).outerWidth())
-                    ){  
+                    ){
                         if ($(this).hasClass('silverCoin')){
                             $(this).fadeOut(100);
                             coinsSong.play();
@@ -148,9 +146,9 @@ $(function(){
                     'top': '0' +'px'
                 });
             }
-            if (diver.position().top  > heightScreen-200) {
+            if (diver.position().top  > heightScreen-100) {
                diver.animate({
-                    'top': '70vh'
+                    'top': '60vh'
                 });
             } 
             if (diver.position().left < -50) {
@@ -191,7 +189,7 @@ $(function(){
         screens.hide();
         endScreen.fadeIn(1100);
         oceanSong.pause();
-        endSong.play();
+        startSong.play();
         showResult.text(score);
         showResult2.val(score);
     }
@@ -342,7 +340,6 @@ $(function(){
         gameScreen.fadeIn(100);
         information.fadeIn(100);
         startSong.pause();
-        endSong.pause();
         oceanSong.play();
         endScore.removeClass('invisible'); //connected with SCORES SCREEN.
         form.removeClass('invisible'); //connected with SCORES SCREEN.
@@ -367,16 +364,11 @@ $(function(){
         startScreen.hide();
         endScreen.show();
         endScore.addClass('invisible');
-        form.addClass('invisible');
-        /* //version on the Internet 
-        startScreen.hide();
-        scoresScreen.show();*/
-         
+        form.addClass('invisible');         
     });
     
     endGameBtn.on("click", function(event){
         screens.hide();
-        // scoresScreen.hide(); //version on the Internet 
         startScreen.show();
         time.removeClass('finalCounting');
     });   
@@ -407,7 +399,7 @@ $(function(){
    function renderScores(givenResponse){
        for(var i=0;i<3;i++){            
             var value = givenResponse[i];       //!!!! 
-           var oneScore = $("<li>", {class: "oneScore"}).attr('data-id',value.id);
+            var oneScore = $("<li>", {class: "oneScore"}).attr('data-id',value.id);
             var name= $("<p>");
             name.text(value.name);
             var result = $("<p>");

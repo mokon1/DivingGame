@@ -11,16 +11,13 @@
 </head>
 <body>
    <audio id="startSong" loop>
-        <source src="audio/start.mp3" class="music" loop />
+        <source src="audio/start.wav" class="music" loop />
     </audio>
     <audio id="oceanSong" loop>
         <source src="audio/ocean.wav" />
     </audio>
     <audio id="coinsSong">
         <source src="audio/coins.wav" />
-    </audio>
-    <audio id="endSong" loop>
-        <source src="audio/end.wav" class="ocean" loop />
     </audio>
     
     <!-- START SCREEN -->
@@ -59,7 +56,7 @@
             <div class="dangerInstruction bold inline">
                 <p>Beware of: </p>
                 <div class="fishBlackInstruction inline"></div>
-                <p class="inline"> time </br> -10 seconds </p>
+                <p class="inline"> time <br> -10 seconds </p>
             </div>
         </div>
         <div class="direction">
@@ -113,12 +110,13 @@
     
     <section id="information" class="screen">
         <h2>Time: <span id="time"></span></h2>
-        <h3>Score: <span id="result"></span> </h3>
+        <h3>Score: <span id="result"></span></h3>
     </section>
         
     <!-- END SCREEN -->
     <section id="endScreen" class="screen">
-        <p class="endScore">
+        <p class="endScore bold">
+            Game Over. <br>
             Your score: <span class="showResult bold"></span>
         </p>
         <form class="addScore">
@@ -132,16 +130,10 @@
                 <input type="submit" id="addScoreBtn" class="smallButton" value="Zapisz wynik">
             </label>
         </form>
-        <h2>The best scores:</h2>
+        <h2>The best players:</h2>
         <ul class="tableScores">
         </ul>
         <div class="endGameBtn">
-            <p class="smallButton">EXIT</p>
-        </div>
-    </section>
-    <section id="scoresScreen">
-        <p class="scoresScreenText bold"> Sorry, there isn't table scores.</p> 
-         <div class="endGameBtn">
             <p class="smallButton">EXIT</p>
         </div>
     </section>
