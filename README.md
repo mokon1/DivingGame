@@ -20,7 +20,7 @@ Collect coins and beware of black fish.
 * json-server
 
 > Have Fun!<br />
-> https://mokon1.github.io/game/
+> https://mokon1.github.io/DivingGame/
 
 Gifs (scuba divers) from http://www.animatedimages.org.<br />
 Animated fish - sprites in CSS.
